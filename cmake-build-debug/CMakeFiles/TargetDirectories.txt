@@ -1,0 +1,7 @@
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/box_strategy.dir
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/list_install_components.dir
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/install.dir
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/install/local.dir
+/Users/kanthikiran/CLionProjects/box-strategy/cmake-build-debug/CMakeFiles/install/strip.dir

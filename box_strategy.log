@@ -1,0 +1,1145 @@
+2025-05-06 19:11:03 [INFO] Logger initialized. Session started.
+2025-05-06 19:11:03 [INFO] Starting Box Strategy HFT application
+2025-05-06 19:11:03 [INFO] ConfigManager initialized with config file: config.json
+2025-05-06 19:11:03 [INFO] Configuration loaded successfully from config.json
+2025-05-06 19:11:03 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 1
+2025-05-06 19:11:03 [INFO] Initializing thread pool with 8 threads
+2025-05-06 19:11:03 [INFO] Thread pool initialized with 8 threads
+2025-05-06 19:11:03 [INFO] HttpClient initialized
+2025-05-06 19:11:03 [INFO] Initializing AuthManager
+2025-05-06 19:11:03 [INFO] API credentials loaded from configuration
+2025-05-06 19:11:03 [INFO] Access token is not valid. Please authenticate.
+2025-05-06 19:11:03 [INFO] Generated login URL: https://kite.zerodha.com/connect/login?api_key=6vhmpqt5hv49r01o&v=3
+2025-05-06 19:13:23 [INFO] Generating access token with request token: SfVTOAENDFjJg8qvXcvyxTbHuoTL7DPG
+2025-05-06 19:13:24 [INFO] Access token generated successfully
+2025-05-06 19:13:24 [INFO] Configuration saved successfully to config.json
+2025-05-06 19:13:24 [INFO] Authentication successful
+2025-05-06 19:13:24 [INFO] Initializing MarketDataManager
+2025-05-06 19:13:24 [INFO] ExpiryManager initialized
+2025-05-06 19:13:24 [INFO] Initializing FeeCalculator
+2025-05-06 19:13:24 [INFO] Initializing RiskCalculator
+2025-05-06 19:13:24 [INFO] Initializing MarketDepthAnalyzer
+2025-05-06 19:13:24 [INFO] Initializing CombinationAnalyzer
+2025-05-06 19:13:24 [INFO] Initializing OrderManager
+2025-05-06 19:13:24 [INFO] Initializing PaperTrader
+2025-05-06 19:13:24 [INFO] All components initialized
+2025-05-06 19:13:24 [INFO] Starting main trading loop
+2025-05-06 19:13:24 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:24 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:24 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:24 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:24 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:24 [INFO] Fetching all instruments
+2025-05-06 19:13:24 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:24 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:24 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:24 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:24 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:24 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:24 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:24 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:24 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:25 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:25 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:25 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:25 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:25 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:25 [INFO] Fetching all instruments
+2025-05-06 19:13:25 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:25 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:25 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:25 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:25 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:25 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:25 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:25 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:25 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:26 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:26 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:26 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:26 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:26 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:26 [INFO] Fetching all instruments
+2025-05-06 19:13:27 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:27 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:27 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:27 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:27 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:27 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:27 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:27 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:27 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:28 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:28 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:28 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:28 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:28 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:28 [INFO] Fetching all instruments
+2025-05-06 19:13:28 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:28 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:28 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:28 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:28 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:28 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:28 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:28 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:28 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:29 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:29 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:29 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:29 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:29 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:29 [INFO] Fetching all instruments
+2025-05-06 19:13:30 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:30 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:30 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:30 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:30 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:30 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:30 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:30 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:30 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:31 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:31 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:31 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:31 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:31 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:31 [INFO] Fetching all instruments
+2025-05-06 19:13:31 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:31 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:31 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:31 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:31 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:31 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:31 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:31 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:31 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:32 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:32 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:32 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:32 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:32 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:32 [INFO] Fetching all instruments
+2025-05-06 19:13:32 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:32 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:32 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:32 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:32 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:32 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:32 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:32 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:32 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:33 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:33 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:33 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:33 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:33 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:33 [INFO] Fetching all instruments
+2025-05-06 19:13:34 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:34 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:34 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:34 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:34 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:34 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:34 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:34 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:34 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:35 [INFO] Scanning for profitable box spreads
+2025-05-06 19:13:35 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-06 19:13:35 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-06 19:13:35 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-06 19:13:35 [INFO] Fetching instruments for exchange: NFO
+2025-05-06 19:13:35 [INFO] Fetching all instruments
+2025-05-06 19:13:35 [INFO] Fetched 89588 instruments
+2025-05-06 19:13:35 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-06 19:13:35 [INFO] Found 0 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-06 19:13:35 [INFO] Found 0 unique expiries for NIFTY:NFO
+2025-05-06 19:13:35 [INFO] Filtered to 0 expiries for NIFTY:NFO
+2025-05-06 19:13:35 [INFO] Found 0 expiries to analyze
+2025-05-06 19:13:35 [INFO] Found a total of 0 profitable spreads
+2025-05-06 19:13:35 [INFO] No profitable box spreads found. Waiting for next scan...
+2025-05-06 19:13:35 [INFO] Waiting 1 seconds for next scan
+2025-05-06 19:13:35 [INFO] Main trading loop terminated
+2025-05-06 19:13:35 [INFO] Paper trading total profit/loss: 0
+2025-05-06 19:13:35 [INFO] Box Strategy HFT application shutting down
+2025-05-06 19:13:35 [INFO] MarketDataManager destroyed
+2025-05-06 19:13:35 [INFO] HttpClient cleaned up
+2025-05-06 19:13:35 [INFO] Shutting down thread pool
+2025-05-06 19:13:35 [INFO] Thread pool shutdown complete
+2025-05-06 19:13:35 [INFO] Session ended.
+2025-05-07 00:23:58 [INFO] Logger initialized. Session started.
+2025-05-07 00:23:58 [INFO] Starting Box Strategy HFT application
+2025-05-07 00:23:58 [INFO] ConfigManager initialized with config file: config.json
+2025-05-07 00:23:58 [INFO] Configuration loaded successfully from config.json
+2025-05-07 00:23:58 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 1
+2025-05-07 00:23:58 [INFO] Initializing thread pool with 8 threads
+2025-05-07 00:23:58 [INFO] Thread pool initialized with 8 threads
+2025-05-07 00:23:58 [INFO] HttpClient initialized
+2025-05-07 00:23:58 [INFO] Initializing AuthManager
+2025-05-07 00:23:58 [INFO] API credentials loaded from configuration
+2025-05-07 00:23:58 [INFO] Authentication details loaded from configuration
+2025-05-07 00:23:58 [INFO] Using existing access token
+2025-05-07 00:23:58 [INFO] Initializing MarketDataManager
+2025-05-07 00:23:58 [INFO] MarketDataManager initialized with cache TTL: 1440 minutes
+2025-05-07 00:23:58 [INFO] ExpiryManager initialized
+2025-05-07 00:23:58 [INFO] Initializing FeeCalculator
+2025-05-07 00:23:58 [INFO] Initializing RiskCalculator
+2025-05-07 00:23:58 [INFO] Initializing MarketDepthAnalyzer
+2025-05-07 00:23:58 [INFO] Initializing CombinationAnalyzer
+2025-05-07 00:23:58 [INFO] Initializing OrderManager
+2025-05-07 00:23:58 [INFO] Initializing PaperTrader
+2025-05-07 00:23:58 [INFO] All components initialized
+2025-05-07 00:23:58 [INFO] Testing option chain functionality
+2025-05-07 00:23:58 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-07 00:23:58 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-07 00:23:58 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:23:58 [INFO] Getting all instruments
+2025-05-07 00:23:58 [INFO] Fetching instruments from API
+2025-05-07 00:23:58 [INFO] Updated instruments cache
+2025-05-07 00:23:58 [INFO] Saved instruments data to cache
+2025-05-07 00:23:58 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:23:58 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:23:58 [INFO] Fetched 89588 instruments
+2025-05-07 00:23:58 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:23:58 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:23:58 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:23:58 [INFO] Retrieved 33351 instruments from exchange NFO
+2025-05-07 00:23:58 [INFO] Found 32698 total options, 2720 filtered for NIFTY, 2720 with valid expiry, 18 unique expiry dates
+2025-05-07 00:23:58 [INFO] Found 4 weekly expiries and 14 monthly expiries for NIFTY
+2025-05-07 00:23:58 [INFO] Found 18 unique expiries for NIFTY:NFO
+2025-05-07 00:23:58 [INFO] Found 18 expiries for NIFTY
+2025-05-07 00:23:58 [INFO] Getting option chain for NIFTY with expiry 2025-05-08
+2025-05-07 00:23:58 [INFO] Getting all instruments
+2025-05-07 00:23:58 [INFO] Using cached instruments data
+2025-05-07 00:23:58 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:23:58 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:23:58 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:23:58 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-07 00:23:58 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-07 00:23:58 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:23:58 [INFO] Getting all instruments
+2025-05-07 00:23:58 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:23:59 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:23:59 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:23:59 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:23:59 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:23:59 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:23:59 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-07 00:23:59 [INFO] Found 234 options in the chain
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820400PE (9832706), Strike: 20400, Type: PE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820400CE (9832450), Strike: 20400, Type: CE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820450PE (9833218), Strike: 20450, Type: PE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820450CE (9832962), Strike: 20450, Type: CE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820500PE (9833730), Strike: 20500, Type: PE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820500CE (9833474), Strike: 20500, Type: CE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820550PE (9834242), Strike: 20550, Type: PE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820550CE (9833986), Strike: 20550, Type: CE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820600PE (9834754), Strike: 20600, Type: PE
+2025-05-07 00:23:59 [INFO] Option: NIFTY2550820600CE (9834498), Strike: 20600, Type: CE
+2025-05-07 00:23:59 [INFO] Getting live quotes for options
+2025-05-07 00:23:59 [INFO] Getting option chain with quotes for NIFTY, expiry: 2025-05-08
+2025-05-07 00:23:59 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-07 00:23:59 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:23:59 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:23:59 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:23:59 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:23:59 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:23:59 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:23:59 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-07 00:23:59 [INFO] Got quotes for 234/234 options in the chain
+2025-05-07 00:23:59 [INFO] Got quotes for 234 options
+2025-05-07 00:23:59 [INFO] Option with quote: NIFTY2550820400PE, Strike: 20400, Type: PE, LTP: 1.65, Bid: 1.65, Ask: 1.7
+2025-05-07 00:23:59 [INFO] Option with quote: NIFTY2550820400CE, Strike: 20400, Type: CE, LTP: 0, Bid: 3882.9, Ask: 3989.5
+2025-05-07 00:23:59 [INFO] Option with quote: NIFTY2550820450PE, Strike: 20450, Type: PE, LTP: 1.7, Bid: 1.6, Ask: 1.8
+2025-05-07 00:23:59 [INFO] Option with quote: NIFTY2550820450CE, Strike: 20450, Type: CE, LTP: 3918.2, Bid: 3848.35, Ask: 3897
+2025-05-07 00:23:59 [INFO] Option with quote: NIFTY2550820500PE, Strike: 20500, Type: PE, LTP: 1.7, Bid: 1.7, Ask: 1.75
+2025-05-07 00:23:59 [INFO] Starting main trading loop
+2025-05-07 00:23:59 [INFO] Scanning for profitable box spreads
+2025-05-07 00:23:59 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-07 00:23:59 [INFO] Filtered to 3 expiries for NIFTY:NFO
+2025-05-07 00:23:59 [INFO] Found 3 expiries to analyze
+2025-05-07 00:23:59 [INFO] Processing expiry 2025-05-15
+2025-05-07 00:23:59 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:23:59 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:23:59 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:23:59 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:23:59 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-07 00:23:59 [ERROR] Failed to find spot instrument for NIFTY:NSE
+2025-05-07 00:23:59 [INFO] Getting option chain for NIFTY, expiry: 2025-05-15
+2025-05-07 00:23:59 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:23:59 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:23:59 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:23:59 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:23:59 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:23:59 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:23:59 [INFO] Found 224 options (112 calls, 112 puts) for NIFTY with expiry 2025-05-15
+2025-05-07 00:23:59 [INFO] Filtered option chain contains 224 options for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:23:59 [INFO] Found 112 strikes after filtering for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:23:59 [INFO] Generated 1919 strike combinations
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Getting all instruments
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:23:59 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58624 ms before retrying
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58624 ms before retrying
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58611 ms before retrying
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58601 ms before retrying
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58592 ms before retrying
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58568 ms before retrying
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58561 ms before retrying
+2025-05-07 00:24:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_21050.00_2025-05-15
+2025-05-07 00:24:00 [INFO] Getting all instruments
+2025-05-07 00:24:00 [INFO] Using cached instruments data
+2025-05-07 00:24:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:24:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:24:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:24:00 [WARN] Rate limit exceeded for /quote. Waiting 58377 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 854 ms before retrying
+2025-05-07 00:24:59 [WARN] Rate limit exceeded for /quote. Waiting 783 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 10 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 10 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 10 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 7 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 7 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 8 ms before retrying
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_21000.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_20950.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_20900.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 272 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 257 ms before retrying
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_21150.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 226 ms before retrying
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_20850.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 98 ms before retrying
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 83 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 71 ms before retrying
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 48 ms before retrying
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 0 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 34 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 34 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 34 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 34 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 32 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 32 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 31 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 53 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 53 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 53 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 53 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 53 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 50 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 11 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 11 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 11 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 11 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 10 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 9 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58641 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58641 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58640 ms before retrying
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58633 ms before retrying
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_21300.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58548 ms before retrying
+2025-05-07 00:25:00 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_21100.00_2025-05-15
+2025-05-07 00:25:00 [INFO] Getting all instruments
+2025-05-07 00:25:00 [INFO] Using cached instruments data
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58525 ms before retrying
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58396 ms before retrying
+2025-05-07 00:25:00 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:00 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:00 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:00 [WARN] Rate limit exceeded for /quote. Waiting 58374 ms before retrying
+2025-05-07 00:25:53 [INFO] Logger initialized. Session started.
+2025-05-07 00:25:53 [INFO] Starting Box Strategy HFT application
+2025-05-07 00:25:53 [INFO] ConfigManager initialized with config file: config.json
+2025-05-07 00:25:53 [INFO] Configuration loaded successfully from config.json
+2025-05-07 00:25:53 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 1
+2025-05-07 00:25:53 [INFO] Initializing thread pool with 8 threads
+2025-05-07 00:25:53 [INFO] Thread pool initialized with 8 threads
+2025-05-07 00:25:53 [INFO] HttpClient initialized
+2025-05-07 00:25:53 [INFO] Initializing AuthManager
+2025-05-07 00:25:53 [INFO] API credentials loaded from configuration
+2025-05-07 00:25:53 [INFO] Authentication details loaded from configuration
+2025-05-07 00:25:53 [INFO] Using existing access token
+2025-05-07 00:25:53 [INFO] Initializing MarketDataManager
+2025-05-07 00:25:53 [INFO] MarketDataManager initialized with cache TTL: 1440 minutes
+2025-05-07 00:25:53 [INFO] ExpiryManager initialized
+2025-05-07 00:25:53 [INFO] Initializing FeeCalculator
+2025-05-07 00:25:53 [INFO] Initializing RiskCalculator
+2025-05-07 00:25:53 [INFO] Initializing MarketDepthAnalyzer
+2025-05-07 00:25:53 [INFO] Initializing CombinationAnalyzer
+2025-05-07 00:25:53 [INFO] Initializing OrderManager
+2025-05-07 00:25:53 [INFO] Initializing PaperTrader
+2025-05-07 00:25:53 [INFO] All components initialized
+2025-05-07 00:25:53 [INFO] Testing option chain functionality
+2025-05-07 00:25:53 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-07 00:25:53 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-07 00:25:53 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:25:53 [INFO] Getting all instruments
+2025-05-07 00:25:53 [INFO] Using cached instruments data
+2025-05-07 00:25:53 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:53 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:53 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:53 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:25:53 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:25:53 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:25:53 [INFO] Retrieved 33351 instruments from exchange NFO
+2025-05-07 00:25:53 [INFO] Found 32698 total options, 2720 filtered for NIFTY, 2720 with valid expiry, 18 unique expiry dates
+2025-05-07 00:25:53 [INFO] Found 4 weekly expiries and 14 monthly expiries for NIFTY
+2025-05-07 00:25:53 [INFO] Found 18 unique expiries for NIFTY:NFO
+2025-05-07 00:25:53 [INFO] Found 18 expiries for NIFTY
+2025-05-07 00:25:53 [INFO] Getting option chain for NIFTY with expiry 2025-05-08
+2025-05-07 00:25:53 [INFO] Getting all instruments
+2025-05-07 00:25:53 [INFO] Using cached instruments data
+2025-05-07 00:25:53 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:53 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:53 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:53 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-07 00:25:53 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-07 00:25:53 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:25:53 [INFO] Getting all instruments
+2025-05-07 00:25:53 [INFO] Using cached instruments data
+2025-05-07 00:25:53 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:53 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:53 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:53 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:25:53 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:25:53 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:25:53 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-07 00:25:53 [INFO] Found 234 options in the chain
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820400PE (9832706), Strike: 20400, Type: PE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820400CE (9832450), Strike: 20400, Type: CE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820450PE (9833218), Strike: 20450, Type: PE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820450CE (9832962), Strike: 20450, Type: CE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820500PE (9833730), Strike: 20500, Type: PE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820500CE (9833474), Strike: 20500, Type: CE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820550PE (9834242), Strike: 20550, Type: PE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820550CE (9833986), Strike: 20550, Type: CE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820600PE (9834754), Strike: 20600, Type: PE
+2025-05-07 00:25:53 [INFO] Option: NIFTY2550820600CE (9834498), Strike: 20600, Type: CE
+2025-05-07 00:25:53 [INFO] Getting live quotes for options
+2025-05-07 00:25:53 [INFO] Getting option chain with quotes for NIFTY, expiry: 2025-05-08
+2025-05-07 00:25:53 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-07 00:25:53 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:25:53 [INFO] Getting all instruments
+2025-05-07 00:25:53 [INFO] Using cached instruments data
+2025-05-07 00:25:53 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:53 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:53 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:53 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:25:53 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:25:53 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:25:53 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-07 00:25:53 [INFO] Got quotes for 234/234 options in the chain
+2025-05-07 00:25:53 [INFO] Got quotes for 234 options
+2025-05-07 00:25:53 [INFO] Option with quote: NIFTY2550820400PE, Strike: 20400, Type: PE, LTP: 1.65, Bid: 1.65, Ask: 1.7
+2025-05-07 00:25:53 [INFO] Option with quote: NIFTY2550820400CE, Strike: 20400, Type: CE, LTP: 0, Bid: 3882.9, Ask: 3989.5
+2025-05-07 00:25:53 [INFO] Option with quote: NIFTY2550820450PE, Strike: 20450, Type: PE, LTP: 1.7, Bid: 1.6, Ask: 1.8
+2025-05-07 00:25:53 [INFO] Option with quote: NIFTY2550820450CE, Strike: 20450, Type: CE, LTP: 3918.2, Bid: 3848.35, Ask: 3897
+2025-05-07 00:25:53 [INFO] Option with quote: NIFTY2550820500PE, Strike: 20500, Type: PE, LTP: 1.7, Bid: 1.7, Ask: 1.75
+2025-05-07 00:25:53 [INFO] Starting main trading loop
+2025-05-07 00:25:53 [INFO] Scanning for profitable box spreads
+2025-05-07 00:25:53 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-07 00:25:53 [INFO] Filtered to 3 expiries for NIFTY:NFO
+2025-05-07 00:25:53 [INFO] Found 3 expiries to analyze
+2025-05-07 00:25:53 [INFO] Processing expiry 2025-05-15
+2025-05-07 00:25:53 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:25:53 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:25:53 [INFO] Getting all instruments
+2025-05-07 00:25:53 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-07 00:25:54 [ERROR] Failed to find spot instrument for NIFTY:NSE
+2025-05-07 00:25:54 [INFO] Getting option chain for NIFTY, expiry: 2025-05-15
+2025-05-07 00:25:54 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:25:54 [INFO] Found 2726 NIFTY instruments
+2025-05-07 00:25:54 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:25:54 [INFO] Found 224 options (112 calls, 112 puts) for NIFTY with expiry 2025-05-15
+2025-05-07 00:25:54 [INFO] Filtered option chain contains 224 options for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:25:54 [INFO] Found 112 strikes after filtering for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:25:54 [INFO] Generated 1919 strike combinations
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Getting all instruments
+2025-05-07 00:25:54 [INFO] Using cached instruments data
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:54 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:54 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:54 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:55 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:55 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:55 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:55 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:55 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:55 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:55 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:55 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:55 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:55 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:25:55 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:25:55 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58684 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58673 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58673 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58673 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58662 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58652 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58623 ms before retrying
+2025-05-07 00:25:55 [WARN] Rate limit exceeded for /quote. Waiting 58578 ms before retrying
+2025-05-07 00:27:46 [INFO] Logger initialized. Session started.
+2025-05-07 00:27:46 [INFO] Starting Box Strategy HFT application
+2025-05-07 00:27:46 [INFO] ConfigManager initialized with config file: config.json
+2025-05-07 00:27:46 [INFO] Configuration loaded successfully from config.json
+2025-05-07 00:27:46 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 1
+2025-05-07 00:27:46 [INFO] Initializing thread pool with 8 threads
+2025-05-07 00:27:46 [INFO] Thread pool initialized with 8 threads
+2025-05-07 00:27:46 [INFO] HttpClient initialized
+2025-05-07 00:27:46 [INFO] Initializing AuthManager
+2025-05-07 00:27:46 [INFO] API credentials loaded from configuration
+2025-05-07 00:27:46 [INFO] Authentication details loaded from configuration
+2025-05-07 00:27:46 [INFO] Using existing access token
+2025-05-07 00:27:46 [INFO] Initializing MarketDataManager
+2025-05-07 00:27:46 [INFO] MarketDataManager initialized with cache TTL: 1440 minutes
+2025-05-07 00:27:46 [INFO] ExpiryManager initialized
+2025-05-07 00:27:46 [INFO] Initializing FeeCalculator
+2025-05-07 00:27:46 [INFO] Initializing RiskCalculator
+2025-05-07 00:27:46 [INFO] Initializing MarketDepthAnalyzer
+2025-05-07 00:27:46 [INFO] Initializing CombinationAnalyzer
+2025-05-07 00:27:46 [INFO] Initializing OrderManager
+2025-05-07 00:27:46 [INFO] Initializing PaperTrader
+2025-05-07 00:27:46 [INFO] All components initialized
+2025-05-07 00:27:46 [INFO] Testing option chain functionality
+2025-05-07 00:27:46 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-07 00:27:46 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-07 00:27:46 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:27:46 [INFO] Getting all instruments
+2025-05-07 00:27:46 [INFO] Using cached instruments data
+2025-05-07 00:27:47 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:47 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:47 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:47 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:27:47 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:27:47 [INFO] Found 2726 NIFTY instruments, including 2720 NIFTY options
+2025-05-07 00:27:47 [INFO] Retrieved 33351 instruments from exchange NFO
+2025-05-07 00:27:47 [INFO] Found 32698 total options, 2720 filtered for NIFTY, 2720 with valid expiry, 18 unique expiry dates
+2025-05-07 00:27:47 [INFO] Found 4 weekly expiries and 14 monthly expiries for NIFTY
+2025-05-07 00:27:47 [INFO] Found 18 unique expiries for NIFTY:NFO
+2025-05-07 00:27:47 [INFO] Found 18 expiries for NIFTY
+2025-05-07 00:27:47 [INFO] Getting option chain for NIFTY with expiry 2025-05-08
+2025-05-07 00:27:47 [INFO] Getting all instruments
+2025-05-07 00:27:47 [INFO] Using cached instruments data
+2025-05-07 00:27:47 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:47 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:47 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:47 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-07 00:27:47 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-07 00:27:47 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:27:47 [INFO] Getting all instruments
+2025-05-07 00:27:47 [INFO] Using cached instruments data
+2025-05-07 00:27:47 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:47 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:47 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:47 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:27:47 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:27:47 [INFO] Found 2726 NIFTY instruments, including 2720 NIFTY options
+2025-05-07 00:27:47 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-07 00:27:47 [INFO] Found 234 options in the chain
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820400PE (9832706), Strike: 20400, Type: PE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820400CE (9832450), Strike: 20400, Type: CE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820450PE (9833218), Strike: 20450, Type: PE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820450CE (9832962), Strike: 20450, Type: CE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820500PE (9833730), Strike: 20500, Type: PE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820500CE (9833474), Strike: 20500, Type: CE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820550PE (9834242), Strike: 20550, Type: PE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820550CE (9833986), Strike: 20550, Type: CE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820600PE (9834754), Strike: 20600, Type: PE
+2025-05-07 00:27:47 [INFO] Option: NIFTY2550820600CE (9834498), Strike: 20600, Type: CE
+2025-05-07 00:27:47 [INFO] Getting live quotes for options
+2025-05-07 00:27:47 [INFO] Getting option chain with quotes for NIFTY, expiry: 2025-05-08
+2025-05-07 00:27:47 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-07 00:27:47 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:27:47 [INFO] Getting all instruments
+2025-05-07 00:27:47 [INFO] Using cached instruments data
+2025-05-07 00:27:47 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:47 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:47 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:47 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:27:47 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:27:47 [INFO] Found 2726 NIFTY instruments, including 2720 NIFTY options
+2025-05-07 00:27:47 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-07 00:27:47 [INFO] Got quotes for 234/234 options in the chain
+2025-05-07 00:27:47 [INFO] Got quotes for 234 options
+2025-05-07 00:27:47 [INFO] Option with quote: NIFTY2550820400PE, Strike: 20400, Type: PE, LTP: 1.65, Bid: 1.65, Ask: 1.7
+2025-05-07 00:27:47 [INFO] Option with quote: NIFTY2550820400CE, Strike: 20400, Type: CE, LTP: 0, Bid: 3882.9, Ask: 3989.5
+2025-05-07 00:27:47 [INFO] Option with quote: NIFTY2550820450PE, Strike: 20450, Type: PE, LTP: 1.7, Bid: 1.6, Ask: 1.8
+2025-05-07 00:27:47 [INFO] Option with quote: NIFTY2550820450CE, Strike: 20450, Type: CE, LTP: 3918.2, Bid: 3848.35, Ask: 3897
+2025-05-07 00:27:47 [INFO] Option with quote: NIFTY2550820500PE, Strike: 20500, Type: PE, LTP: 1.7, Bid: 1.7, Ask: 1.75
+2025-05-07 00:27:47 [INFO] Starting main trading loop
+2025-05-07 00:27:47 [INFO] Scanning for profitable box spreads
+2025-05-07 00:27:47 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-07 00:27:47 [INFO] Filtered to 3 expiries for NIFTY:NFO
+2025-05-07 00:27:47 [INFO] Found 3 expiries to analyze
+2025-05-07 00:27:47 [INFO] Processing expiry 2025-05-15
+2025-05-07 00:27:47 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:27:47 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:27:47 [INFO] Getting all instruments
+2025-05-07 00:27:47 [INFO] Using cached instruments data
+2025-05-07 00:27:47 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:47 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:47 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:47 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-07 00:27:47 [ERROR] Failed to find spot instrument for NIFTY:NSE
+2025-05-07 00:27:47 [INFO] Getting option chain for NIFTY, expiry: 2025-05-15
+2025-05-07 00:27:47 [INFO] Fetching instruments for exchange: NFO
+2025-05-07 00:27:47 [INFO] Getting all instruments
+2025-05-07 00:27:47 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Fetched 33351 instruments for exchange NFO
+2025-05-07 00:27:48 [INFO] Instrument type counts: OPTIONS=32698, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-07 00:27:48 [INFO] Found 2726 NIFTY instruments, including 2720 NIFTY options
+2025-05-07 00:27:48 [INFO] Found 224 options (112 calls, 112 puts) for NIFTY with expiry 2025-05-15
+2025-05-07 00:27:48 [INFO] Filtered option chain contains 224 options for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:27:48 [INFO] Found 112 strikes after filtering for NIFTY:NFO with expiry 2025-05-15
+2025-05-07 00:27:48 [INFO] Generated 1919 strike combinations
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:48 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:48 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58750 ms before retrying
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58737 ms before retrying
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58723 ms before retrying
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58723 ms before retrying
+2025-05-07 00:27:48 [WARN] Box spread does not have complete market data: NIFTY_NFO_20650.00_21000.00_2025-05-15
+2025-05-07 00:27:48 [INFO] Getting all instruments
+2025-05-07 00:27:48 [INFO] Using cached instruments data
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58691 ms before retrying
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58688 ms before retrying
+2025-05-07 00:27:48 [WARN] Rate limit exceeded for /quote. Waiting 58664 ms before retrying
+2025-05-07 00:27:49 [INFO] Parsed 89588 instruments from CSV data
+2025-05-07 00:27:49 [INFO] Instrument counts: OPTIONS=67984, FUTURES=1025, EQUITY=20585, NIFTY OPTIONS=2722
+2025-05-07 00:27:49 [INFO] Loaded 89588 instruments from cache
+2025-05-07 00:27:49 [WARN] Rate limit exceeded for /quote. Waiting 58566 ms before retrying

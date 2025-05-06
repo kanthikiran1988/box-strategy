@@ -1,0 +1,52 @@
+{
+    "api": {
+        "key": "6vhmpqt5hv49r01o",
+        "secret": "xh4v29snrfmne6ccf2xhlj60s6tf79hs"
+    },
+    "auth": {
+        "access_token": "8QyBpw09YvEx3ZJjqadaEtxAxPGOd0vq",
+        "expiry": "2025-05-07 17:18:49"
+    },
+    "expiry": {
+        "include_monthly": true,
+        "include_weekly": true,
+        "max_count": 3,
+        "max_days": 30,
+        "min_days": 1
+    },
+    "fees": {
+        "brokerage_percentage": 0.03,
+        "exchange_charges_percentage": 0.00053,
+        "gst_percentage": 18.0,
+        "max_brokerage_per_order": 20.0,
+        "sebi_charges_per_crore": 10.0,
+        "stamp_duty_percentage": 0.003,
+        "stt_percentage": 0.05
+    },
+    "paper_trading": {
+        "base_slippage_percent": 0.1,
+        "market_volatility_factor": 1.0
+    },
+    "risk": {
+        "capital_safety_factor": 0.9,
+        "exposure_margin_percentage": 3.0,
+        "margin_buffer_percentage": 25.0,
+        "max_loss_percentage": 2.0
+    },
+    "strategy": {
+        "capital": 75000.0,
+        "exchange": "NFO",
+        "max_strike_diff": 1000.0,
+        "min_profitability": 0.1,
+        "min_roi": 0.5,
+        "min_strike_diff": 100.0,
+        "paper_trading": true,
+        "quantity": 1,
+        "scan_interval_seconds": 1,
+        "underlying": "NIFTY"
+    },
+    "system": {
+        "log_level": "INFO",
+        "num_threads": 8
+    }
+}

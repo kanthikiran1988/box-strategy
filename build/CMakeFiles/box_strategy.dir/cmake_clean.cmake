@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/config/ConfigManager.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/config/ConfigManager.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/main.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/main.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/utils/HttpClient.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/utils/HttpClient.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o.d"
+  "box_strategy"
+  "box_strategy.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/box_strategy.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
