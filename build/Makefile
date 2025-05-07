@@ -582,6 +582,30 @@ src/utils/ThreadPool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/box_strategy.dir/build.make CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.s
 .PHONY : src/utils/ThreadPool.cpp.s
 
+src/utils/ThreadPoolOptimizer.o: src/utils/ThreadPoolOptimizer.cpp.o
+.PHONY : src/utils/ThreadPoolOptimizer.o
+
+# target to build an object file
+src/utils/ThreadPoolOptimizer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/box_strategy.dir/build.make CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o
+.PHONY : src/utils/ThreadPoolOptimizer.cpp.o
+
+src/utils/ThreadPoolOptimizer.i: src/utils/ThreadPoolOptimizer.cpp.i
+.PHONY : src/utils/ThreadPoolOptimizer.i
+
+# target to preprocess a source file
+src/utils/ThreadPoolOptimizer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/box_strategy.dir/build.make CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.i
+.PHONY : src/utils/ThreadPoolOptimizer.cpp.i
+
+src/utils/ThreadPoolOptimizer.s: src/utils/ThreadPoolOptimizer.cpp.s
+.PHONY : src/utils/ThreadPoolOptimizer.s
+
+# target to generate assembly for a file
+src/utils/ThreadPoolOptimizer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/box_strategy.dir/build.make CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.s
+.PHONY : src/utils/ThreadPoolOptimizer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -646,6 +670,9 @@ help:
 	@echo "... src/utils/ThreadPool.o"
 	@echo "... src/utils/ThreadPool.i"
 	@echo "... src/utils/ThreadPool.s"
+	@echo "... src/utils/ThreadPoolOptimizer.o"
+	@echo "... src/utils/ThreadPoolOptimizer.i"
+	@echo "... src/utils/ThreadPoolOptimizer.s"
 .PHONY : help
 
 

@@ -14,6 +14,7 @@
 #include <future>
 #include <memory>
 #include <atomic>
+#include <type_traits>
 #include "../utils/Logger.hpp"
 
 namespace BoxStrategy {
@@ -67,6 +68,27 @@ public:
      * @brief Wait for all tasks to complete
      */
     void waitForCompletion();
+    
+    /**
+     * @brief Get the optimal number of threads for computation tasks
+     * @param factor Adjustment factor (0.0-1.0) to control thread usage percentage
+     * @return Optimal number of threads
+     */
+    static size_t getOptimalThreadCount(float factor = 0.75f) {
+        // Get the number of hardware threads available
+        unsigned int hwThreads = std::thread::hardware_concurrency();
+        
+        // If we can't determine the hardware threads, use a reasonable default
+        if (hwThreads == 0) {
+            hwThreads = 4;
+        }
+        
+        // Apply the factor to avoid using 100% of CPU resources
+        size_t optimalThreads = static_cast<size_t>(hwThreads * factor);
+        
+        // Ensure we have at least 1 thread
+        return std::max<size_t>(1, optimalThreads);
+    }
 
 private:
     /**
@@ -77,7 +99,7 @@ private:
     std::vector<std::thread> m_workers;           ///< Worker threads
     std::queue<std::function<void()>> m_tasks;    ///< Task queue
     
-    mutable std::mutex m_queueMutex;                      ///< Mutex for task queue
+    mutable std::mutex m_queueMutex;              ///< Mutex for task queue
     std::condition_variable m_condition;          ///< Condition variable for task queue
     std::condition_variable m_completionCondition;///< Condition variable for completion
     

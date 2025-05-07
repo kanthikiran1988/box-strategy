@@ -142,10 +142,24 @@ CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPool.cpp -o CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.s
 
+CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o: CMakeFiles/box_strategy.dir/flags.make
+CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPoolOptimizer.cpp
+CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o -MF CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o.d -o CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPoolOptimizer.cpp
+
+CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPoolOptimizer.cpp > CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.i
+
+CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPoolOptimizer.cpp -o CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.s
+
 CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/models/InstrumentModel.cpp
 CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o -MF CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o.d -o CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/models/InstrumentModel.cpp
 
 CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/models/OrderModel.cpp
 CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o -MF CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o.d -o CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/models/OrderModel.cpp
 
 CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/models/BoxSpreadModel.cpp
 CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o -MF CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o.d -o CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/models/BoxSpreadModel.cpp
 
 CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/auth/AuthManager.cpp
 CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o -MF CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o.d -o CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/auth/AuthManager.cpp
 
 CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/box_strategy.dir/src/auth/AuthManager.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/market/MarketDataManager.cpp
 CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o -MF CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o.d -o CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/market/MarketDataManager.cpp
 
 CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/box_strategy.dir/src/market/MarketDataManager.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/market/ExpiryManager.cpp
 CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o -MF CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o.d -o CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/market/ExpiryManager.cpp
 
 CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/box_strategy.dir/src/market/ExpiryManager.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/CombinationAnalyzer.cpp
 CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o -MF CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o.d -o CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/CombinationAnalyzer.cpp
 
 CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/MarketDepthAnalyzer.cpp
 CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o -MF CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o.d -o CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/MarketDepthAnalyzer.cpp
 
 CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/box_strategy.dir/src/analysis/MarketDepthAnalyzer.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/risk/RiskCalculator.cpp
 CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o -MF CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o.d -o CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/risk/RiskCalculator.cpp
 
 CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.i: cmake_force
@@ -271,7 +285,7 @@ CMakeFiles/box_strategy.dir/src/risk/RiskCalculator.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/risk/FeeCalculator.cpp
 CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o -MF CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o.d -o CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/risk/FeeCalculator.cpp
 
 CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.i: cmake_force
@@ -285,7 +299,7 @@ CMakeFiles/box_strategy.dir/src/risk/FeeCalculator.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/trading/OrderManager.cpp
 CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o -MF CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o.d -o CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/trading/OrderManager.cpp
 
 CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.i: cmake_force
@@ -299,7 +313,7 @@ CMakeFiles/box_strategy.dir/src/trading/OrderManager.cpp.s: cmake_force
 CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o: CMakeFiles/box_strategy.dir/flags.make
 CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o: /Users/kanthikiran/CLionProjects/box-strategy/src/trading/PaperTrader.cpp
 CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o: CMakeFiles/box_strategy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o -MF CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o.d -o CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.o -c /Users/kanthikiran/CLionProjects/box-strategy/src/trading/PaperTrader.cpp
 
 CMakeFiles/box_strategy.dir/src/trading/PaperTrader.cpp.i: cmake_force
@@ -317,6 +331,7 @@ box_strategy_OBJECTS = \
 "CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o" \
 "CMakeFiles/box_strategy.dir/src/utils/HttpClient.cpp.o" \
 "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o" \
+"CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o" \
 "CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o" \
 "CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o" \
 "CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o" \
@@ -338,6 +353,7 @@ box_strategy: CMakeFiles/box_strategy.dir/src/config/ConfigManager.cpp.o
 box_strategy: CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o
 box_strategy: CMakeFiles/box_strategy.dir/src/utils/HttpClient.cpp.o
 box_strategy: CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o
+box_strategy: CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o
 box_strategy: CMakeFiles/box_strategy.dir/src/models/InstrumentModel.cpp.o
 box_strategy: CMakeFiles/box_strategy.dir/src/models/OrderModel.cpp.o
 box_strategy: CMakeFiles/box_strategy.dir/src/models/BoxSpreadModel.cpp.o
@@ -356,7 +372,7 @@ box_strategy: /opt/homebrew/Cellar/openssl@3/3.5.0/lib/libssl.dylib
 box_strategy: /opt/homebrew/Cellar/openssl@3/3.5.0/lib/libcrypto.dylib
 box_strategy: /opt/homebrew/lib/libfmt.11.2.0.dylib
 box_strategy: CMakeFiles/box_strategy.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable box_strategy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kanthikiran/CLionProjects/box-strategy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable box_strategy"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/box_strategy.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

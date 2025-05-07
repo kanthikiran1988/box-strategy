@@ -1,1074 +1,502 @@
-2025-05-08 01:49:05 [INFO] Logger initialized. Session started.
-2025-05-08 01:49:05 [INFO] Starting Box Strategy HFT application
-2025-05-08 01:49:05 [INFO] ConfigManager initialized with config file: config.json
-2025-05-08 01:49:05 [INFO] Configuration loaded successfully from config.json
-2025-05-08 01:49:05 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 75
-2025-05-08 01:49:05 [INFO] Initializing thread pool with 8 threads
-2025-05-08 01:49:05 [INFO] Thread pool initialized with 8 threads
-2025-05-08 01:49:05 [INFO] HttpClient initialized
-2025-05-08 01:49:05 [INFO] Initializing AuthManager
-2025-05-08 01:49:05 [INFO] API credentials loaded from configuration
-2025-05-08 01:49:05 [INFO] Authentication details loaded from configuration
-2025-05-08 01:49:05 [INFO] Using existing access token
-2025-05-08 01:49:05 [INFO] Initializing MarketDataManager
-2025-05-08 01:49:05 [INFO] MarketDataManager initialized with cache TTL: 1440 minutes
-2025-05-08 01:49:05 [INFO] ExpiryManager initialized
-2025-05-08 01:49:05 [INFO] Initializing FeeCalculator
-2025-05-08 01:49:05 [INFO] Initializing RiskCalculator
-2025-05-08 01:49:05 [INFO] Initializing MarketDepthAnalyzer
-2025-05-08 01:49:05 [INFO] Initializing CombinationAnalyzer
-2025-05-08 01:49:05 [INFO] Initializing OrderManager
-2025-05-08 01:49:05 [INFO] Initializing PaperTrader
-2025-05-08 01:49:05 [INFO] All components initialized
-2025-05-08 01:49:05 [INFO] Testing option chain functionality
-2025-05-08 01:49:05 [INFO] Refreshing expiries for NIFTY:NFO
-2025-05-08 01:49:05 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
-2025-05-08 01:49:05 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 01:49:05 [INFO] Getting all instruments
-2025-05-08 01:49:05 [INFO] Using cached instruments data
-2025-05-08 01:49:05 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:05 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:05 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:05 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 01:49:05 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 01:49:05 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 01:49:05 [INFO] Retrieved 34100 instruments from exchange NFO
-2025-05-08 01:49:05 [INFO] Found 33447 total options, 2730 filtered for NIFTY, 2730 with valid expiry, 18 unique expiry dates
-2025-05-08 01:49:05 [INFO] Found 18 weekly expiries and 0 monthly expiries for NIFTY
-2025-05-08 01:49:05 [INFO] Found 18 unique expiries for NIFTY:NFO
-2025-05-08 01:49:05 [INFO] Found 18 expiries for NIFTY
-2025-05-08 01:49:05 [INFO] Getting option chain for NIFTY with expiry 2025-05-08
-2025-05-08 01:49:05 [INFO] Getting all instruments
-2025-05-08 01:49:05 [INFO] Using cached instruments data
-2025-05-08 01:49:05 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:05 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:05 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:05 [WARN] Instrument with symbol NIFTY:NSE not found
-2025-05-08 01:49:05 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
-2025-05-08 01:49:05 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 01:49:05 [INFO] Getting all instruments
-2025-05-08 01:49:05 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 01:49:06 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 01:49:06 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 01:49:06 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Found 234 options in the chain
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820400PE (9832706), Strike: 20400, Type: PE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820400CE (9832450), Strike: 20400, Type: CE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820450PE (9833218), Strike: 20450, Type: PE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820450CE (9832962), Strike: 20450, Type: CE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820500PE (9833730), Strike: 20500, Type: PE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820500CE (9833474), Strike: 20500, Type: CE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820550PE (9834242), Strike: 20550, Type: PE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820550CE (9833986), Strike: 20550, Type: CE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820600PE (9834754), Strike: 20600, Type: PE
-2025-05-08 01:49:06 [INFO] Option: NIFTY2550820600CE (9834498), Strike: 20600, Type: CE
-2025-05-08 01:49:06 [INFO] Getting live quotes for options
-2025-05-08 01:49:06 [INFO] Getting option chain with quotes for NIFTY, expiry: 2025-05-08
-2025-05-08 01:49:06 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
-2025-05-08 01:49:06 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 01:49:06 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 01:49:06 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 01:49:06 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Got quotes for 234/234 options in the chain
-2025-05-08 01:49:06 [INFO] Got quotes for 234 options
-2025-05-08 01:49:06 [INFO] Option with quote: NIFTY2550820400PE, Strike: 20400, Type: PE, LTP: 0.65, Bid: 0.55, Ask: 0.65
-2025-05-08 01:49:06 [INFO] Option with quote: NIFTY2550820400CE, Strike: 20400, Type: CE, LTP: 0, Bid: 3912.75, Ask: 4027.9
-2025-05-08 01:49:06 [INFO] Option with quote: NIFTY2550820450PE, Strike: 20450, Type: PE, LTP: 0.75, Bid: 0.55, Ask: 0.6
-2025-05-08 01:49:06 [INFO] Option with quote: NIFTY2550820450CE, Strike: 20450, Type: CE, LTP: 3918.2, Bid: 3864.25, Ask: 3971.55
-2025-05-08 01:49:06 [INFO] Option with quote: NIFTY2550820500PE, Strike: 20500, Type: PE, LTP: 0.6, Bid: 0.55, Ask: 0.75
-2025-05-08 01:49:06 [INFO] Starting main trading loop
-2025-05-08 01:49:06 [INFO] Scanning for profitable box spreads
-2025-05-08 01:49:06 [INFO] Finding profitable spreads for NIFTY:NFO
-2025-05-08 01:49:06 [INFO] Filtered to 3 expiries for NIFTY:NFO
-2025-05-08 01:49:06 [INFO] Found 3 expiries to analyze
-2025-05-08 01:49:06 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 01:49:06 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 01:49:06 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 01:49:06 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 01:49:06 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
-2025-05-08 01:49:06 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
-2025-05-08 01:49:06 [INFO] Getting option chain for NIFTY, expiry: 2025-05-15
-2025-05-08 01:49:06 [INFO] Getting option chain for NIFTY, expiry: 2025-05-22
-2025-05-08 01:49:06 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 01:49:06 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
-2025-05-08 01:49:06 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
-2025-05-08 01:49:06 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 01:49:06 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 01:49:06 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 01:49:06 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-15
-2025-05-08 01:49:06 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 01:49:06 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 01:49:06 [INFO] Generated 722 strike combinations
-2025-05-08 01:49:06 [INFO] Pre-loading options for all combinations
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 01:49:06 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 01:49:06 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 01:49:06 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-22
-2025-05-08 01:49:06 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 01:49:06 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 01:49:06 [INFO] Generated 722 strike combinations
-2025-05-08 01:49:06 [INFO] Pre-loading options for all combinations
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 01:49:06 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 01:49:06 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 01:49:06 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 01:49:06 [INFO] Generated 722 strike combinations
-2025-05-08 01:49:06 [INFO] Pre-loading options for all combinations
-2025-05-08 01:49:06 [INFO] Getting all instruments
-2025-05-08 01:49:06 [INFO] Using cached instruments data
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Found options for 49 strikes, requiring 98 quotes
-2025-05-08 01:49:06 [INFO] Fetching quotes for batch of 98 options
-2025-05-08 01:49:06 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 01:49:06 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 01:49:06 [INFO] Loaded 90080 instruments from cache
-2025-05-08 01:49:06 [INFO] Found options for 49 strikes, requiring 98 quotes
-2025-05-08 01:49:06 [INFO] Fetching quotes for batch of 98 options
-2025-05-08 01:49:06 [INFO] Found options for 49 strikes, requiring 98 quotes
-2025-05-08 01:49:06 [INFO] Fetching quotes for batch of 98 options
-2025-05-08 01:49:06 [INFO] Successfully fetched quotes for 98/98 options
-2025-05-08 01:49:06 [INFO] Processing batch 1/15 (50 combinations)
-2025-05-08 01:49:07 [INFO] Successfully fetched quotes for 98/98 options
-2025-05-08 01:49:07 [INFO] Processing batch 1/15 (50 combinations)
-2025-05-08 01:49:07 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23550.00_2025-05-22
-2025-05-08 01:49:07 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23650.00_2025-05-22
-2025-05-08 01:49:07 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23350.00_2025-05-22
-2025-05-08 01:49:07 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23300.00_2025-05-22
-2025-05-08 01:49:07 [INFO] Successfully fetched quotes for 98/98 options
-2025-05-08 01:49:07 [INFO] Processing batch 1/15 (50 combinations)
-2025-05-08 01:49:10 [INFO] Processing batch 2/15 (50 combinations)
-2025-05-08 01:49:11 [INFO] Processing batch 2/15 (50 combinations)
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25150.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25200.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25250.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25300.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25150.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25250.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25200.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25350.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25400.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25450.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25500.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25400.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25300.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25350.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25550.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25600.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25450.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25500.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25550.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25600.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23350.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25400.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25300.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25350.00_2025-05-22
-2025-05-08 01:49:11 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23400.00_2025-05-22
-2025-05-08 01:49:11 [INFO] Processing batch 2/15 (50 combinations)
-2025-05-08 01:49:14 [INFO] Processing batch 3/15 (50 combinations)
-2025-05-08 01:49:15 [INFO] Processing batch 3/15 (50 combinations)
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23550.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23600.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23450.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23500.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23800.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23700.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23750.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23950.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24000.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23900.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23650.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23850.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24050.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24250.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24150.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24200.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23850.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23900.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23950.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24000.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24050.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24100.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24150.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24200.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23800.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24300.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24350.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24400.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24450.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24500.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24550.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24600.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23750.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24250.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24100.00_2025-05-22
-2025-05-08 01:49:15 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24650.00_2025-05-22
-2025-05-08 01:49:15 [INFO] Processing batch 3/15 (50 combinations)
-2025-05-08 01:49:18 [INFO] Processing batch 4/15 (50 combinations)
-2025-05-08 01:49:19 [INFO] Processing batch 4/15 (50 combinations)
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25150.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25200.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25300.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25250.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25350.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25150.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25250.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25300.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25400.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25450.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25450.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25500.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25400.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25200.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25350.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25550.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25450.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25500.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25550.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25600.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25350.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25400.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23550.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23450.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23500.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25600.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23600.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23650.00_2025-05-22
-2025-05-08 01:49:19 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23700.00_2025-05-22
-2025-05-08 01:49:19 [INFO] Processing batch 4/15 (50 combinations)
-2025-05-08 01:49:22 [INFO] Processing batch 5/15 (50 combinations)
-2025-05-08 01:49:23 [INFO] Processing batch 5/15 (50 combinations)
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23850.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23800.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23750.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23900.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23950.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24000.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24050.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24250.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24300.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24350.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24100.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24150.00_2025-05-22
-2025-05-08 01:49:23 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24200.00_2025-05-22
-2025-05-08 01:49:23 [INFO] Processing batch 5/15 (50 combinations)
-2025-05-08 01:49:26 [INFO] Processing batch 6/15 (50 combinations)
-2025-05-08 01:49:27 [INFO] Processing batch 6/15 (50 combinations)
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24150.00_25150.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25150.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25200.00_2025-05-22
-2025-05-08 01:49:27 [INFO] Processing batch 6/15 (50 combinations)
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25450.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25250.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25350.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25400.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25300.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25500.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25250.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25300.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25200.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25550.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25450.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25500.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25400.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25150.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25450.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25550.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25600.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25350.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25500.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23700.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23750.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23800.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23850.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23900.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23950.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24000.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24050.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24100.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24150.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24200.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24250.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24300.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25600.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23650.00_2025-05-22
-2025-05-08 01:49:27 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25550.00_2025-05-22
-2025-05-08 01:49:30 [INFO] Processing batch 7/15 (50 combinations)
-2025-05-08 01:49:31 [INFO] Processing batch 7/15 (50 combinations)
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24350.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24500.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24400.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24450.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24550.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25150.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25300.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25250.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25350.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25200.00_2025-05-22
-2025-05-08 01:49:31 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25150.00_2025-05-22
-2025-05-08 01:49:31 [INFO] Processing batch 7/15 (50 combinations)
-2025-05-08 01:49:34 [INFO] Processing batch 8/15 (50 combinations)
-2025-05-08 01:49:35 [INFO] Processing batch 8/15 (50 combinations)
-2025-05-08 01:49:35 [INFO] Processing batch 8/15 (50 combinations)
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25250.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25400.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25350.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25200.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25300.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25450.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25500.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25550.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25350.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25400.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25450.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25500.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25550.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25600.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25600.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25250.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25300.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_23400.00_23550.00_2025-05-22
-2025-05-08 01:49:35 [WARN] Box spread does not have complete market data: NIFTY_NFO_23400.00_23650.00_2025-05-22
-2025-05-08 01:49:38 [INFO] Processing batch 9/15 (50 combinations)
-2025-05-08 01:49:39 [INFO] Processing batch 9/15 (50 combinations)
-2025-05-08 01:49:39 [INFO] Processing batch 9/15 (50 combinations)
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24200.00_25150.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24200.00_25200.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25150.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25200.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25300.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25250.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25350.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25400.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25450.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25200.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25550.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25600.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25300.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25350.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25400.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25150.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25500.00_2025-05-22
-2025-05-08 01:49:39 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25250.00_2025-05-22
-2025-05-08 01:49:42 [INFO] Processing batch 10/15 (50 combinations)
-2025-05-08 01:49:43 [INFO] Processing batch 10/15 (50 combinations)
-2025-05-08 01:49:43 [INFO] Processing batch 10/15 (50 combinations)
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25500.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25450.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25550.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25600.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25500.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25550.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25600.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23400.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23600.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23650.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23700.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23750.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23800.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23850.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23900.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23950.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24000.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24050.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24100.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24150.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24200.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24250.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24300.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23450.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23500.00_2025-05-22
-2025-05-08 01:49:43 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23550.00_2025-05-22
-2025-05-08 01:49:46 [INFO] Processing batch 11/15 (50 combinations)
-2025-05-08 01:49:47 [INFO] Processing batch 11/15 (50 combinations)
-2025-05-08 01:49:47 [INFO] Processing batch 11/15 (50 combinations)
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25200.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25150.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25250.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25350.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25300.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25400.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25150.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25500.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25450.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25200.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25400.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25300.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25350.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25250.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25450.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25500.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25550.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25500.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25550.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25450.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25600.00_2025-05-22
-2025-05-08 01:49:47 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25400.00_2025-05-22
-2025-05-08 01:49:50 [INFO] Processing batch 12/15 (50 combinations)
-2025-05-08 01:49:51 [INFO] Processing batch 12/15 (50 combinations)
-2025-05-08 01:49:51 [INFO] Processing batch 12/15 (50 combinations)
-2025-05-08 01:49:51 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25600.00_2025-05-22
-2025-05-08 01:49:51 [WARN] Box spread does not have complete market data: NIFTY_NFO_23450.00_23650.00_2025-05-22
-2025-05-08 01:49:51 [WARN] Box spread does not have complete market data: NIFTY_NFO_23450.00_23550.00_2025-05-22
-2025-05-08 01:49:54 [INFO] Processing batch 13/15 (50 combinations)
-2025-05-08 01:49:55 [INFO] Processing batch 13/15 (50 combinations)
-2025-05-08 01:49:55 [INFO] Processing batch 13/15 (50 combinations)
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25150.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25200.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25250.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25150.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25200.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25250.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25300.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25350.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25400.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25450.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25150.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25200.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25250.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25300.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25350.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25400.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25500.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25550.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25550.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25450.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25500.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25600.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25600.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25450.00_25550.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_25450.00_25600.00_2025-05-22
-2025-05-08 01:49:55 [WARN] Box spread does not have complete market data: NIFTY_NFO_23500.00_23650.00_2025-05-22
-2025-05-08 01:49:58 [INFO] Processing batch 14/15 (50 combinations)
-2025-05-08 01:49:59 [INFO] Processing batch 14/15 (50 combinations)
-2025-05-08 01:49:59 [INFO] Processing batch 14/15 (50 combinations)
-2025-05-08 01:49:59 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25150.00_2025-05-22
-2025-05-08 01:49:59 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25200.00_2025-05-22
-2025-05-08 01:49:59 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25250.00_2025-05-22
-2025-05-08 01:49:59 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25300.00_2025-05-22
-2025-05-08 01:50:02 [INFO] Processing batch 15/15 (22 combinations)
-2025-05-08 01:50:02 [INFO] Found 162 profitable spreads out of 722 combinations
-2025-05-08 01:50:02 [INFO] Found 162 profitable spreads for an expiry
-2025-05-08 01:50:03 [INFO] Processing batch 15/15 (22 combinations)
-2025-05-08 01:50:03 [INFO] Found 58 profitable spreads out of 722 combinations
-2025-05-08 01:50:03 [INFO] Processing batch 15/15 (22 combinations)
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25150.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25250.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25200.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25350.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25300.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25400.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25200.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25250.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25550.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25600.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25450.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25500.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25300.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25600.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25400.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25450.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25500.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25550.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25350.00_2025-05-22
-2025-05-08 01:50:03 [WARN] Box spread does not have complete market data: NIFTY_NFO_25500.00_25600.00_2025-05-22
-2025-05-08 01:50:03 [INFO] Found 0 profitable spreads out of 722 combinations
-2025-05-08 01:50:03 [INFO] Found 58 profitable spreads for an expiry
-2025-05-08 01:50:03 [INFO] Found 0 profitable spreads for an expiry
-2025-05-08 01:50:03 [INFO] Found a total of 220 profitable spreads
-2025-05-08 01:50:03 [INFO] Found 220 profitable box spreads
-2025-05-08 01:50:03 [INFO] 220 box spreads have sufficient liquidity
-2025-05-08 01:50:03 [INFO] Selected box spread: NIFTY_NFO_25150.00_25250.00_2025-05-08
-2025-05-08 01:50:03 [INFO] Theoretical value: 100, Net premium: -127.44999999999993, ROI: 9.856822928156932%, Profitability: 72.40623571284893
-2025-05-08 01:50:03 [INFO] Simulating box spread trade (paper trading mode)
-2025-05-08 01:50:03 [INFO] Simulating box spread trade: NIFTY_NFO_25150.00_25250.00_2025-05-08, quantity: 75
-2025-05-08 01:50:03 [INFO] Box spread trade simulated: paper_trade_20250508015003087, profit: 116150.39878481248
-2025-05-08 01:50:03 [INFO] Paper trade result: ID: paper_trade_20250508015003087, Profit: 116150.39878481248
-2025-05-08 01:50:03 [INFO] Waiting 60 seconds for next scan
-2025-05-08 01:50:03 [INFO] Main trading loop terminated
-2025-05-08 01:50:03 [INFO] Paper trading total profit/loss: 116150.39878481248
-2025-05-08 01:50:03 [INFO] Box Strategy HFT application shutting down
-2025-05-08 01:50:03 [INFO] MarketDataManager destroyed
-2025-05-08 01:50:03 [INFO] HttpClient cleaned up
-2025-05-08 01:50:03 [INFO] Shutting down thread pool
-2025-05-08 01:50:03 [INFO] Thread pool shutdown complete
-2025-05-08 01:50:03 [INFO] Session ended.
-2025-05-08 02:05:37 [INFO] Logger initialized. Session started.
-2025-05-08 02:05:37 [INFO] Starting Box Strategy HFT application
-2025-05-08 02:05:37 [INFO] ConfigManager initialized with config file: config.json
-2025-05-08 02:05:37 [INFO] Configuration loaded successfully from config.json
-2025-05-08 02:05:37 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 75
-2025-05-08 02:05:37 [INFO] Initializing thread pool with 20 threads
-2025-05-08 02:05:37 [INFO] Thread pool initialized with 20 threads
-2025-05-08 02:05:37 [INFO] HttpClient initialized
-2025-05-08 02:05:37 [INFO] Initializing AuthManager
-2025-05-08 02:05:37 [INFO] API credentials loaded from configuration
-2025-05-08 02:05:37 [INFO] Authentication details loaded from configuration
-2025-05-08 02:05:37 [INFO] Using existing access token
-2025-05-08 02:05:37 [INFO] Initializing MarketDataManager
-2025-05-08 02:05:37 [INFO] MarketDataManager initialized with cache TTL: 1440 minutes
-2025-05-08 02:05:37 [INFO] ExpiryManager initialized
-2025-05-08 02:05:37 [INFO] Initializing FeeCalculator
-2025-05-08 02:05:37 [INFO] Initializing RiskCalculator
-2025-05-08 02:05:37 [INFO] Initializing MarketDepthAnalyzer
-2025-05-08 02:05:37 [INFO] Initializing CombinationAnalyzer
-2025-05-08 02:05:37 [INFO] Initializing OrderManager
-2025-05-08 02:05:37 [INFO] Initializing PaperTrader
-2025-05-08 02:05:37 [INFO] All components initialized
-2025-05-08 02:05:37 [INFO] Testing option chain functionality
-2025-05-08 02:05:37 [INFO] Refreshing expiries for NIFTY:NFO
-2025-05-08 02:05:37 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
-2025-05-08 02:05:37 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 02:05:37 [INFO] Getting all instruments
-2025-05-08 02:05:37 [INFO] Using cached instruments data
-2025-05-08 02:05:37 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:37 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:37 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:37 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 02:05:37 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 02:05:37 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 02:05:37 [INFO] Retrieved 34100 instruments from exchange NFO
-2025-05-08 02:05:37 [INFO] Found 33447 total options, 2730 filtered for NIFTY, 2730 with valid expiry, 18 unique expiry dates
-2025-05-08 02:05:37 [INFO] Found 18 weekly expiries and 0 monthly expiries for NIFTY
-2025-05-08 02:05:37 [INFO] Found 18 unique expiries for NIFTY:NFO
-2025-05-08 02:05:37 [INFO] Found 18 expiries for NIFTY
-2025-05-08 02:05:37 [INFO] Getting option chain for NIFTY with expiry 2025-05-08
-2025-05-08 02:05:37 [INFO] Getting all instruments
-2025-05-08 02:05:37 [INFO] Using cached instruments data
-2025-05-08 02:05:37 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:37 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:37 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:37 [WARN] Instrument with symbol NIFTY:NSE not found
-2025-05-08 02:05:37 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
-2025-05-08 02:05:37 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 02:05:37 [INFO] Getting all instruments
-2025-05-08 02:05:37 [INFO] Using cached instruments data
-2025-05-08 02:05:37 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:37 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:37 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:37 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 02:05:37 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 02:05:37 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 02:05:37 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
-2025-05-08 02:05:37 [INFO] Found 234 options in the chain
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820400PE (9832706), Strike: 20400, Type: PE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820400CE (9832450), Strike: 20400, Type: CE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820450PE (9833218), Strike: 20450, Type: PE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820450CE (9832962), Strike: 20450, Type: CE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820500PE (9833730), Strike: 20500, Type: PE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820500CE (9833474), Strike: 20500, Type: CE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820550PE (9834242), Strike: 20550, Type: PE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820550CE (9833986), Strike: 20550, Type: CE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820600PE (9834754), Strike: 20600, Type: PE
-2025-05-08 02:05:37 [INFO] Option: NIFTY2550820600CE (9834498), Strike: 20600, Type: CE
-2025-05-08 02:05:37 [INFO] Getting live quotes for options
-2025-05-08 02:05:37 [INFO] Getting option chain with quotes for NIFTY, expiry: 2025-05-08
-2025-05-08 02:05:37 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
-2025-05-08 02:05:37 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 02:05:37 [INFO] Getting all instruments
-2025-05-08 02:05:37 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 02:05:38 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 02:05:38 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 02:05:38 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
-2025-05-08 02:05:38 [INFO] Got quotes for 234/234 options in the chain
-2025-05-08 02:05:38 [INFO] Got quotes for 234 options
-2025-05-08 02:05:38 [INFO] Option with quote: NIFTY2550820400PE, Strike: 20400, Type: PE, LTP: 0.65, Bid: 0.55, Ask: 0.65
-2025-05-08 02:05:38 [INFO] Option with quote: NIFTY2550820400CE, Strike: 20400, Type: CE, LTP: 0, Bid: 3912.75, Ask: 4027.9
-2025-05-08 02:05:38 [INFO] Option with quote: NIFTY2550820450PE, Strike: 20450, Type: PE, LTP: 0.75, Bid: 0.55, Ask: 0.6
-2025-05-08 02:05:38 [INFO] Option with quote: NIFTY2550820450CE, Strike: 20450, Type: CE, LTP: 3918.2, Bid: 3864.25, Ask: 3971.55
-2025-05-08 02:05:38 [INFO] Option with quote: NIFTY2550820500PE, Strike: 20500, Type: PE, LTP: 0.6, Bid: 0.55, Ask: 0.75
-2025-05-08 02:05:38 [INFO] Starting main trading loop
-2025-05-08 02:05:38 [INFO] Scanning for profitable box spreads
-2025-05-08 02:05:38 [INFO] Finding profitable spreads for NIFTY:NFO
-2025-05-08 02:05:38 [INFO] Filtered to 3 expiries for NIFTY:NFO
-2025-05-08 02:05:38 [INFO] Found 3 expiries to analyze
-2025-05-08 02:05:38 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 02:05:38 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 02:05:38 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 02:05:38 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 02:05:38 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 02:05:38 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 02:05:38 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
-2025-05-08 02:05:38 [INFO] Getting option chain for NIFTY, expiry: 2025-05-15
-2025-05-08 02:05:38 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 02:05:38 [INFO] Getting all instruments
-2025-05-08 02:05:38 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
-2025-05-08 02:05:38 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
-2025-05-08 02:05:38 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 02:05:38 [INFO] Getting all instruments
-2025-05-08 02:05:38 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
-2025-05-08 02:05:38 [INFO] Getting option chain for NIFTY, expiry: 2025-05-22
-2025-05-08 02:05:38 [INFO] Fetching instruments for exchange: NFO
-2025-05-08 02:05:38 [INFO] Getting all instruments
-2025-05-08 02:05:38 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 02:05:38 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 02:05:38 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 02:05:38 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-15
-2025-05-08 02:05:38 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 02:05:38 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-15
-2025-05-08 02:05:38 [INFO] Generated 722 strike combinations
-2025-05-08 02:05:38 [INFO] Pre-loading options for all combinations
-2025-05-08 02:05:38 [INFO] Getting all instruments
-2025-05-08 02:05:38 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 02:05:38 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 02:05:38 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 02:05:38 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-08
-2025-05-08 02:05:38 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 02:05:38 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-08
-2025-05-08 02:05:38 [INFO] Generated 722 strike combinations
-2025-05-08 02:05:38 [INFO] Pre-loading options for all combinations
-2025-05-08 02:05:38 [INFO] Getting all instruments
-2025-05-08 02:05:38 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Fetched 34100 instruments for exchange NFO
-2025-05-08 02:05:38 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
-2025-05-08 02:05:38 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
-2025-05-08 02:05:38 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-22
-2025-05-08 02:05:38 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 02:05:38 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-22
-2025-05-08 02:05:38 [INFO] Generated 722 strike combinations
-2025-05-08 02:05:38 [INFO] Pre-loading options for all combinations
-2025-05-08 02:05:38 [INFO] Getting all instruments
-2025-05-08 02:05:38 [INFO] Using cached instruments data
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Found options for 49 strikes, requiring 98 quotes
-2025-05-08 02:05:38 [INFO] Fetching quotes for batch of 98 options
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Parsed 90080 instruments from CSV data
-2025-05-08 02:05:38 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
-2025-05-08 02:05:38 [INFO] Loaded 90080 instruments from cache
-2025-05-08 02:05:38 [INFO] Found options for 49 strikes, requiring 98 quotes
-2025-05-08 02:05:38 [INFO] Fetching quotes for batch of 98 options
-2025-05-08 02:05:38 [INFO] Found options for 49 strikes, requiring 98 quotes
-2025-05-08 02:05:38 [INFO] Fetching quotes for batch of 98 options
-2025-05-08 02:05:38 [INFO] Successfully fetched quotes for 98/98 options
-2025-05-08 02:05:38 [INFO] Processing all combinations in parallel using 20 threads
-2025-05-08 02:05:38 [INFO] Processing batch 1/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 2/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 3/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 4/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 5/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 6/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 7/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 8/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 9/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 10/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 11/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 12/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 13/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 14/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 15/15 (22 combinations)
-2025-05-08 02:05:38 [INFO] Processed all 722 combinations across 15 logical batches
-2025-05-08 02:05:38 [INFO] Found 58 profitable spreads out of 722 combinations
-2025-05-08 02:05:38 [INFO] Successfully fetched quotes for 98/98 options
-2025-05-08 02:05:38 [INFO] Processing all combinations in parallel using 20 threads
-2025-05-08 02:05:38 [INFO] Processing batch 1/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24200.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23400.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 2/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23900.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23700.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23950.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 3/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24200.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24100.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23750.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23700.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23850.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23800.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24000.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24050.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23750.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 4/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23850.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23950.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23800.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23700.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23800.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23850.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23900.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23750.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23950.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24000.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23900.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24100.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24000.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24100.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24050.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24050.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23400.00_23550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23400.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 5/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23450.00_23550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23450.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 6/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25450.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23500.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25450.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23750.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25500.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23700.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23800.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 7/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23850.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23950.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24000.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24050.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23900.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24100.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 8/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23750.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23850.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24100.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24650.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24000.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23900.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23950.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24450.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 9/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24050.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23800.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 10/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 11/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 12/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 13/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 14/15 (50 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25200.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processing batch 15/15 (22 combinations)
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_24150.00_25150.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25450.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25500.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25550.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25250.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25300.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25350.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25600.00_2025-05-22
-2025-05-08 02:05:38 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25400.00_2025-05-22
-2025-05-08 02:05:38 [INFO] Processed all 722 combinations across 15 logical batches
-2025-05-08 02:05:38 [INFO] Found 0 profitable spreads out of 722 combinations
-2025-05-08 02:05:38 [INFO] Successfully fetched quotes for 98/98 options
-2025-05-08 02:05:38 [INFO] Processing all combinations in parallel using 20 threads
-2025-05-08 02:05:38 [INFO] Processing batch 1/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 2/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 3/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 4/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 5/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 6/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 7/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 8/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 9/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 10/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 11/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 12/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 13/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 14/15 (50 combinations)
-2025-05-08 02:05:38 [INFO] Processing batch 15/15 (22 combinations)
-2025-05-08 02:05:38 [INFO] Processed all 722 combinations across 15 logical batches
-2025-05-08 02:05:38 [INFO] Found 162 profitable spreads out of 722 combinations
-2025-05-08 02:05:38 [INFO] Found 162 profitable spreads for an expiry
-2025-05-08 02:05:38 [INFO] Found 58 profitable spreads for an expiry
-2025-05-08 02:05:38 [INFO] Found 0 profitable spreads for an expiry
-2025-05-08 02:05:38 [INFO] Found a total of 220 profitable spreads
-2025-05-08 02:05:38 [INFO] Found 220 profitable box spreads
-2025-05-08 02:05:38 [INFO] 220 box spreads have sufficient liquidity
-2025-05-08 02:05:38 [INFO] Selected box spread: NIFTY_NFO_25150.00_25250.00_2025-05-08
-2025-05-08 02:05:38 [INFO] Theoretical value: 100, Net premium: -127.44999999999993, ROI: 9.856822928156932%, Profitability: 72.40623571284893
-2025-05-08 02:05:38 [INFO] Simulating box spread trade (paper trading mode)
-2025-05-08 02:05:38 [INFO] Simulating box spread trade: NIFTY_NFO_25150.00_25250.00_2025-05-08, quantity: 75
-2025-05-08 02:05:38 [INFO] Box spread trade simulated: paper_trade_20250508020538953, profit: 116150.39878481248
-2025-05-08 02:05:38 [INFO] Paper trade result: ID: paper_trade_20250508020538953, Profit: 116150.39878481248
-2025-05-08 02:05:38 [INFO] Waiting 60 seconds for next scan
-2025-05-08 02:05:47 [INFO] Main trading loop terminated
-2025-05-08 02:05:47 [INFO] Paper trading total profit/loss: 116150.39878481248
-2025-05-08 02:05:47 [INFO] Box Strategy HFT application shutting down
-2025-05-08 02:05:47 [INFO] MarketDataManager destroyed
-2025-05-08 02:05:48 [INFO] HttpClient cleaned up
-2025-05-08 02:05:48 [INFO] Shutting down thread pool
-2025-05-08 02:05:48 [INFO] Thread pool shutdown complete
-2025-05-08 02:05:48 [INFO] Session ended.
+2025-05-08 02:53:43 [INFO] Logger initialized. Session started.
+2025-05-08 02:53:43 [INFO] Starting Box Strategy HFT application
+2025-05-08 02:53:43 [INFO] ConfigManager initialized with config file: config.json
+2025-05-08 02:53:43 [INFO] Configuration loaded successfully from config.json
+2025-05-08 02:53:43 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 75
+2025-05-08 02:53:43 [INFO] Initializing thread pool with 20 threads
+2025-05-08 02:53:43 [INFO] Thread pool initialized with 20 threads
+2025-05-08 02:53:43 [INFO] HttpClient initialized
+2025-05-08 02:53:43 [INFO] Initializing AuthManager
+2025-05-08 02:53:43 [INFO] API credentials loaded from configuration
+2025-05-08 02:53:43 [INFO] Authentication details loaded from configuration
+2025-05-08 02:53:43 [INFO] Using existing access token
+2025-05-08 02:53:43 [INFO] Initializing MarketDataManager
+2025-05-08 02:53:43 [INFO] MarketDataManager initialized with cache TTL: 1440 minutes
+2025-05-08 02:53:43 [INFO] ExpiryManager initialized
+2025-05-08 02:53:43 [INFO] Initializing FeeCalculator
+2025-05-08 02:53:43 [INFO] Initializing RiskCalculator
+2025-05-08 02:53:43 [INFO] Initializing MarketDepthAnalyzer
+2025-05-08 02:53:43 [INFO] Initializing CombinationAnalyzer
+2025-05-08 02:53:43 [INFO] Initializing CombinationAnalyzer
+2025-05-08 02:53:43 [INFO] Initializing OrderManager
+2025-05-08 02:53:43 [INFO] Initializing PaperTrader
+2025-05-08 02:53:43 [INFO] All components initialized
+2025-05-08 02:53:43 [INFO] Testing option chain functionality
+2025-05-08 02:53:43 [INFO] Refreshing expiries for NIFTY:NFO
+2025-05-08 02:53:43 [INFO] Getting expiries for underlying: NIFTY, exchange: NFO
+2025-05-08 02:53:43 [INFO] Fetching instruments for exchange: NFO
+2025-05-08 02:53:43 [INFO] Getting all instruments
+2025-05-08 02:53:43 [INFO] Using cached instruments data
+2025-05-08 02:53:43 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:43 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:43 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:43 [INFO] Fetched 34100 instruments for exchange NFO
+2025-05-08 02:53:43 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-08 02:53:43 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
+2025-05-08 02:53:43 [INFO] Retrieved 34100 instruments from exchange NFO
+2025-05-08 02:53:43 [INFO] Found 33447 total options, 2730 filtered for NIFTY, 2730 with valid expiry, 18 unique expiry dates
+2025-05-08 02:53:43 [INFO] Found 18 weekly expiries and 0 monthly expiries for NIFTY
+2025-05-08 02:53:43 [INFO] Found 18 unique expiries for NIFTY:NFO
+2025-05-08 02:53:43 [INFO] Found 18 expiries for NIFTY
+2025-05-08 02:53:43 [INFO] Getting option chain for NIFTY with expiry 2025-05-08
+2025-05-08 02:53:43 [INFO] Getting all instruments
+2025-05-08 02:53:43 [INFO] Using cached instruments data
+2025-05-08 02:53:43 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:43 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:43 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:43 [WARN] Instrument with symbol NIFTY:NSE not found
+2025-05-08 02:53:43 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-08 02:53:43 [INFO] Fetching instruments for exchange: NFO
+2025-05-08 02:53:43 [INFO] Getting all instruments
+2025-05-08 02:53:43 [INFO] Using cached instruments data
+2025-05-08 02:53:43 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:43 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:43 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:43 [INFO] Fetched 34100 instruments for exchange NFO
+2025-05-08 02:53:43 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-08 02:53:43 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
+2025-05-08 02:53:43 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-08 02:53:43 [INFO] Found 234 options in the chain
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820400PE (9832706), Strike: 20400, Type: PE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820400CE (9832450), Strike: 20400, Type: CE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820450PE (9833218), Strike: 20450, Type: PE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820450CE (9832962), Strike: 20450, Type: CE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820500PE (9833730), Strike: 20500, Type: PE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820500CE (9833474), Strike: 20500, Type: CE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820550PE (9834242), Strike: 20550, Type: PE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820550CE (9833986), Strike: 20550, Type: CE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820600PE (9834754), Strike: 20600, Type: PE
+2025-05-08 02:53:43 [INFO] Option: NIFTY2550820600CE (9834498), Strike: 20600, Type: CE
+2025-05-08 02:53:43 [INFO] Getting live quotes for options
+2025-05-08 02:53:43 [INFO] Getting option chain with quotes for NIFTY, expiry: 2025-05-08
+2025-05-08 02:53:43 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-08 02:53:43 [INFO] Fetching instruments for exchange: NFO
+2025-05-08 02:53:43 [INFO] Getting all instruments
+2025-05-08 02:53:43 [INFO] Using cached instruments data
+2025-05-08 02:53:43 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:43 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:43 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:43 [INFO] Fetched 34100 instruments for exchange NFO
+2025-05-08 02:53:43 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-08 02:53:43 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
+2025-05-08 02:53:43 [INFO] Found 234 options (117 calls, 117 puts) for NIFTY with expiry 2025-05-08
+2025-05-08 02:53:44 [INFO] Got quotes for 234/234 options in the chain
+2025-05-08 02:53:44 [INFO] Got quotes for 234 options
+2025-05-08 02:53:44 [INFO] Option with quote: NIFTY2550820400PE, Strike: 20400, Type: PE, LTP: 0.65, Bid: 0.55, Ask: 0.65
+2025-05-08 02:53:44 [INFO] Option with quote: NIFTY2550820400CE, Strike: 20400, Type: CE, LTP: 0, Bid: 3912.75, Ask: 4027.9
+2025-05-08 02:53:44 [INFO] Option with quote: NIFTY2550820450PE, Strike: 20450, Type: PE, LTP: 0.75, Bid: 0.55, Ask: 0.6
+2025-05-08 02:53:44 [INFO] Option with quote: NIFTY2550820450CE, Strike: 20450, Type: CE, LTP: 3918.2, Bid: 3864.25, Ask: 3971.55
+2025-05-08 02:53:44 [INFO] Option with quote: NIFTY2550820500PE, Strike: 20500, Type: PE, LTP: 0.6, Bid: 0.55, Ask: 0.75
+2025-05-08 02:53:44 [INFO] Starting main trading loop
+2025-05-08 02:53:44 [INFO] Scanning for profitable box spreads
+2025-05-08 02:53:44 [INFO] Finding profitable spreads for NIFTY:NFO
+2025-05-08 02:53:44 [INFO] Filtered to 3 expiries for NIFTY:NFO
+2025-05-08 02:53:44 [INFO] Found 3 expiries to analyze
+2025-05-08 02:53:44 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-15
+2025-05-08 02:53:44 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-22
+2025-05-08 02:53:44 [INFO] Finding profitable spreads for NIFTY:NFO with expiry 2025-05-08
+2025-05-08 02:53:44 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-15
+2025-05-08 02:53:44 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-22
+2025-05-08 02:53:44 [INFO] Getting filtered option chain for NIFTY:NFO with expiry 2025-05-08
+2025-05-08 02:53:44 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
+2025-05-08 02:53:44 [INFO] Getting option chain for NIFTY, expiry: 2025-05-08
+2025-05-08 02:53:44 [INFO] Fetching instruments for exchange: NFO
+2025-05-08 02:53:44 [INFO] Getting all instruments
+2025-05-08 02:53:44 [INFO] Using cached instruments data
+2025-05-08 02:53:44 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
+2025-05-08 02:53:44 [INFO] Getting option chain for NIFTY, expiry: 2025-05-22
+2025-05-08 02:53:44 [INFO] Fetching instruments for exchange: NFO
+2025-05-08 02:53:44 [INFO] Getting all instruments
+2025-05-08 02:53:44 [INFO] Using cached instruments data
+2025-05-08 02:53:44 [INFO] Found spot price for NIFTY using symbol NIFTY 50: 24414.4
+2025-05-08 02:53:44 [INFO] Getting option chain for NIFTY, expiry: 2025-05-15
+2025-05-08 02:53:44 [INFO] Fetching instruments for exchange: NFO
+2025-05-08 02:53:44 [INFO] Getting all instruments
+2025-05-08 02:53:44 [INFO] Using cached instruments data
+2025-05-08 02:53:44 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:44 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:44 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:44 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:44 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:44 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:44 [INFO] Fetched 34100 instruments for exchange NFO
+2025-05-08 02:53:44 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-08 02:53:44 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
+2025-05-08 02:53:44 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-08
+2025-05-08 02:53:44 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-08
+2025-05-08 02:53:44 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-08
+2025-05-08 02:53:44 [INFO] Generated 722 strike combinations
+2025-05-08 02:53:44 [INFO] Pre-loading options for all combinations
+2025-05-08 02:53:44 [INFO] Getting all instruments
+2025-05-08 02:53:44 [INFO] Using cached instruments data
+2025-05-08 02:53:44 [INFO] Fetched 34100 instruments for exchange NFO
+2025-05-08 02:53:44 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-08 02:53:44 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
+2025-05-08 02:53:44 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-22
+2025-05-08 02:53:44 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-22
+2025-05-08 02:53:44 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-22
+2025-05-08 02:53:44 [INFO] Generated 722 strike combinations
+2025-05-08 02:53:44 [INFO] Pre-loading options for all combinations
+2025-05-08 02:53:44 [INFO] Getting all instruments
+2025-05-08 02:53:44 [INFO] Using cached instruments data
+2025-05-08 02:53:44 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:44 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:44 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:44 [INFO] Fetched 34100 instruments for exchange NFO
+2025-05-08 02:53:44 [INFO] Instrument type counts: OPTIONS=33447, FUTURES=653, EQUITY=0, INDEX=0, OTHER=0
+2025-05-08 02:53:44 [INFO] Found 2736 NIFTY instruments, including 2730 NIFTY options
+2025-05-08 02:53:44 [INFO] Found 98 options (49 calls, 49 puts) for NIFTY with expiry 2025-05-15
+2025-05-08 02:53:44 [INFO] Filtered option chain contains 98 options for NIFTY:NFO with expiry 2025-05-15
+2025-05-08 02:53:44 [INFO] Found 49 strikes after filtering for NIFTY:NFO with expiry 2025-05-15
+2025-05-08 02:53:44 [INFO] Generated 722 strike combinations
+2025-05-08 02:53:44 [INFO] Pre-loading options for all combinations
+2025-05-08 02:53:44 [INFO] Getting all instruments
+2025-05-08 02:53:44 [INFO] Using cached instruments data
+2025-05-08 02:53:44 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:44 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:44 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:44 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:44 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:44 [INFO] Found options for 49 strikes, requiring 98 quotes
+2025-05-08 02:53:44 [INFO] Preparing to fetch quotes for batch of 98 options
+2025-05-08 02:53:44 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:44 [INFO] Found options for 49 strikes, requiring 98 quotes
+2025-05-08 02:53:44 [INFO] Preparing to fetch quotes for batch of 98 options
+2025-05-08 02:53:44 [INFO] Parsed 90080 instruments from CSV data
+2025-05-08 02:53:44 [INFO] Instrument counts: OPTIONS=68477, FUTURES=1024, EQUITY=20585, NIFTY OPTIONS=2732
+2025-05-08 02:53:44 [INFO] Loaded 90080 instruments from cache
+2025-05-08 02:53:44 [INFO] Found options for 49 strikes, requiring 98 quotes
+2025-05-08 02:53:44 [INFO] Preparing to fetch quotes for batch of 98 options
+2025-05-08 02:53:44 [INFO] Fetching quotes for batch of 98 options
+2025-05-08 02:53:44 [INFO] Fetching quotes for batch of 98 options
+2025-05-08 02:53:44 [INFO] Fetching quotes for batch of 98 options
+2025-05-08 02:53:44 [INFO] Successfully fetched quotes for 98/98 options
+2025-05-08 02:53:44 [INFO] Processing 722 combinations with up to 80 concurrent jobs
+2025-05-08 02:53:44 [INFO] Successfully fetched quotes for 98/98 options
+2025-05-08 02:53:44 [INFO] Processing 722 combinations with up to 80 concurrent jobs
+2025-05-08 02:53:44 [INFO] Successfully fetched quotes for 98/98 options
+2025-05-08 02:53:44 [INFO] Processing 722 combinations with up to 80 concurrent jobs
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24200.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24200.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23200.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24100.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23400.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24250.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24300.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25300.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23700.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23750.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24500.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24450.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25450.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23750.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23800.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23850.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25500.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23800.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23450.00_23550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23450.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25450.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23700.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24650.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23900.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24700.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_23950.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24000.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23850.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23900.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23950.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24000.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24750.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23750.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24150.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24050.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24850.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24800.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24400.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25000.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24100.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24050.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23800.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25150.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24950.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25400.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25200.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23850.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23900.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_23950.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_23600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25050.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23500.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25250.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24600.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25100.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24100.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24350.00_25350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24000.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24900.00_25450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24050.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24350.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24100.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_25350.00_25600.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24400.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23400.00_23550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23650.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23700.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23700.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24450.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23750.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23550.00_24150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23800.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23750.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24500.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23300.00_24300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23850.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23900.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23800.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23650.00_24550.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_24550.00_25300.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_23950.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24000.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24050.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24100.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23850.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24150.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23900.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24200.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_23950.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23250.00_24250.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24000.00_2025-05-22
+2025-05-08 02:53:44 [WARN] Box spread does not have complete market data: NIFTY_NFO_23350.00_24050.00_2025-05-22
+2025-05-08 02:53:49 [INFO] Progress: 100.0% (722/722) - 144.4 combinations/sec - Est. remaining: 0 sec
+2025-05-08 02:53:49 [INFO] Completed analysis of 722 combinations in 5 seconds (144.4 combinations/sec)
+2025-05-08 02:53:49 [INFO] Found 58 profitable spreads out of 722 valid combinations
+2025-05-08 02:53:49 [INFO] Progress: 100.0% (722/722) - 144.4 combinations/sec - Est. remaining: 0 sec
+2025-05-08 02:53:49 [INFO] Completed analysis of 722 combinations in 5 seconds (144.4 combinations/sec)
+2025-05-08 02:53:49 [INFO] Found 162 profitable spreads out of 722 valid combinations
+2025-05-08 02:53:49 [INFO] Found 162 profitable spreads for an expiry
+2025-05-08 02:53:49 [INFO] Found 58 profitable spreads for an expiry
+2025-05-08 02:53:49 [INFO] Progress: 100.0% (722/722) - 144.4 combinations/sec - Est. remaining: 0 sec
+2025-05-08 02:53:49 [INFO] Completed analysis of 722 combinations in 5 seconds (144.4 combinations/sec)
+2025-05-08 02:53:49 [INFO] Found 0 profitable spreads out of 428 valid combinations
+2025-05-08 02:53:49 [INFO] Found 0 profitable spreads for an expiry
+2025-05-08 02:53:49 [INFO] Found a total of 220 profitable spreads
+2025-05-08 02:53:49 [INFO] Found 220 profitable box spreads
+2025-05-08 02:53:49 [INFO] 220 box spreads have sufficient liquidity
+2025-05-08 02:53:49 [INFO] Selected box spread: NIFTY_NFO_25150.00_25250.00_2025-05-08
+2025-05-08 02:53:49 [INFO] Theoretical value: 100, Net premium: -127.44999999999993, ROI: 9.856822928156932%, Profitability: 72.40623571284893
+2025-05-08 02:53:49 [INFO] Simulating box spread trade (paper trading mode)
+2025-05-08 02:53:49 [INFO] Simulating box spread trade: NIFTY_NFO_25150.00_25250.00_2025-05-08, quantity: 75
+2025-05-08 02:53:49 [INFO] Box spread trade simulated: paper_trade_20250508025349752, profit: 116150.39878481248
+2025-05-08 02:53:49 [INFO] Paper trade result: ID: paper_trade_20250508025349752, Profit: 116150.39878481248
+2025-05-08 02:53:49 [INFO] Waiting 60 seconds for next scan
+2025-05-08 02:53:51 [INFO] Main trading loop terminated
+2025-05-08 02:53:51 [INFO] Paper trading total profit/loss: 116150.39878481248
+2025-05-08 02:53:51 [INFO] Box Strategy HFT application shutting down
+2025-05-08 02:53:51 [INFO] MarketDataManager destroyed
+2025-05-08 02:53:51 [INFO] HttpClient cleaned up
+2025-05-08 02:53:51 [INFO] Shutting down thread pool
+2025-05-08 02:53:51 [INFO] Thread pool shutdown complete
+2025-05-08 02:53:51 [INFO] Session ended.

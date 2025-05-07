@@ -11,6 +11,10 @@
 #include <sstream>
 #include <cmath>
 #include <unordered_map>
+#include <random>
+#include <thread>
+#include <atomic>
+#include <queue>
 
 namespace BoxStrategy {
 
@@ -28,6 +32,7 @@ CombinationAnalyzer::CombinationAnalyzer(
     m_feeCalculator(feeCalculator),
     m_riskCalculator(riskCalculator),
     m_threadPool(threadPool),
+    m_threadPoolOptimizer(nullptr),
     m_logger(logger) {
     
     m_logger->info("Initializing CombinationAnalyzer");
@@ -159,36 +164,58 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     auto allInstruments = instrumentsFuture.get();
     
     // First pass: Find all required options by strike
-    for (const auto& strike : strikes) {
-        // Find call option for this strike
-        InstrumentModel callOption;
-        InstrumentModel putOption;
+    {
+        // Use a separate thread pool to find options by strike
+        size_t numThreads = std::min(m_threadPool->getNumThreads(), strikes.size());
+        std::vector<std::future<std::pair<double, std::pair<InstrumentModel, InstrumentModel>>>> optionFutures;
+        std::mutex tokensMutex;
         
-        for (const auto& instrument : allInstruments) {
-            if (instrument.type == InstrumentType::OPTION && 
-                instrument.underlying == underlying &&
-                instrument.exchange == exchange &&
-                instrument.expiry == expiry &&
-                std::abs(instrument.strikePrice - strike) < 0.01) {
-                
-                if (instrument.optionType == OptionType::CALL && callOption.instrumentToken == 0) {
-                    callOption = instrument;
-                } else if (instrument.optionType == OptionType::PUT && putOption.instrumentToken == 0) {
-                    putOption = instrument;
+        // Process strikes in parallel to find corresponding options
+        for (const auto& strike : strikes) {
+            optionFutures.push_back(m_threadPool->enqueue(
+                [this, &allInstruments, &tokensMutex, &allRequiredOptionTokens, strike, underlying, exchange, expiry]() {
+                    // Find call option for this strike
+                    InstrumentModel callOption;
+                    InstrumentModel putOption;
+                    
+                    for (const auto& instrument : allInstruments) {
+                        if (instrument.type == InstrumentType::OPTION && 
+                            instrument.underlying == underlying &&
+                            instrument.exchange == exchange &&
+                            instrument.expiry == expiry &&
+                            std::abs(instrument.strikePrice - strike) < 0.01) {
+                            
+                            if (instrument.optionType == OptionType::CALL && callOption.instrumentToken == 0) {
+                                callOption = instrument;
+                            } else if (instrument.optionType == OptionType::PUT && putOption.instrumentToken == 0) {
+                                putOption = instrument;
+                            }
+                            
+                            // If we found both, break early
+                            if (callOption.instrumentToken != 0 && putOption.instrumentToken != 0) {
+                                break;
+                            }
+                        }
+                    }
+                    
+                    // Add tokens to the list of required quotes (thread-safe)
+                    if (callOption.instrumentToken != 0 && putOption.instrumentToken != 0) {
+                        std::lock_guard<std::mutex> lock(tokensMutex);
+                        allRequiredOptionTokens.push_back(callOption.instrumentToken);
+                        allRequiredOptionTokens.push_back(putOption.instrumentToken);
+                    }
+                    
+                    return std::make_pair(strike, std::make_pair(callOption, putOption));
                 }
-                
-                // If we found both, break early
-                if (callOption.instrumentToken != 0 && putOption.instrumentToken != 0) {
-                    break;
-                }
-            }
+            ));
         }
         
-        // Store the options for this strike
-        if (callOption.instrumentToken != 0 && putOption.instrumentToken != 0) {
-            optionsByStrike[strike] = std::make_pair(callOption, putOption);
-            allRequiredOptionTokens.push_back(callOption.instrumentToken);
-            allRequiredOptionTokens.push_back(putOption.instrumentToken);
+        // Collect results from futures
+        for (auto& future : optionFutures) {
+            auto result = future.get();
+            if (result.second.first.instrumentToken != 0 && result.second.second.instrumentToken != 0) {
+                optionsByStrike[result.first] = result.second;
+            }
         }
     }
     
@@ -197,148 +224,242 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     
     // Step 2: Fetch all required quotes in batches of up to 500 instruments per API call
     std::unordered_map<uint64_t, InstrumentModel> quotesCache;
-    const size_t maxQuoteBatchSize = 500; // Zerodha API limit
+    const size_t maxQuoteBatchSize = m_configManager->getIntValue("api/quote_batch_size", 500); // Zerodha API limit
     
-    for (size_t i = 0; i < allRequiredOptionTokens.size(); i += maxQuoteBatchSize) {
-        size_t batchEnd = std::min(i + maxQuoteBatchSize, allRequiredOptionTokens.size());
-        std::vector<uint64_t> batchTokens(allRequiredOptionTokens.begin() + i, 
-                                        allRequiredOptionTokens.begin() + batchEnd);
+    // Implement parallel quote fetching for multiple batches
+    {
+        std::vector<std::future<std::unordered_map<uint64_t, InstrumentModel>>> quoteFutures;
+        std::mutex quotesCacheMutex;
         
-        m_logger->info("Fetching quotes for batch of {} options", batchTokens.size());
-        
-        auto quotesFuture = m_marketDataManager->getQuotes(batchTokens);
-        auto quotes = quotesFuture.get();
-        
-        // Add to cache
-        for (const auto& [token, quote] : quotes) {
-            quotesCache[token] = quote;
+        for (size_t i = 0; i < allRequiredOptionTokens.size(); i += maxQuoteBatchSize) {
+            size_t batchEnd = std::min(i + maxQuoteBatchSize, allRequiredOptionTokens.size());
+            std::vector<uint64_t> batchTokens(allRequiredOptionTokens.begin() + i, 
+                                          allRequiredOptionTokens.begin() + batchEnd);
+            
+            m_logger->info("Preparing to fetch quotes for batch of {} options", batchTokens.size());
+            
+            // Enqueue the quote fetching task
+            quoteFutures.push_back(m_threadPool->enqueue(
+                [this, batchTokens, delayBetweenBatchesMs]() {
+                    // Add a small random delay to spread out API calls
+                    std::random_device rd;
+                    std::mt19937 gen(rd());
+                    std::uniform_int_distribution<> distr(0, 200); // 0-200ms random delay
+                    std::this_thread::sleep_for(std::chrono::milliseconds(distr(gen)));
+                    
+                    m_logger->info("Fetching quotes for batch of {} options", batchTokens.size());
+                    auto quotesFuture = m_marketDataManager->getQuotes(batchTokens);
+                    auto quotes = quotesFuture.get();
+                    
+                    return quotes;
+                }
+            ));
+            
+            // Add a small delay between submitting batches to avoid rate limiting
+            if (batchEnd < allRequiredOptionTokens.size()) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
         }
         
-        // Add delay if there are more batches to process
-        if (batchEnd < allRequiredOptionTokens.size()) {
-            m_logger->debug("Waiting {} ms before fetching next batch of quotes", delayBetweenBatchesMs);
-            std::this_thread::sleep_for(std::chrono::milliseconds(delayBetweenBatchesMs));
+        // Collect results from quote futures
+        for (auto& future : quoteFutures) {
+            auto batchQuotes = future.get();
+            
+            // Merge with the main quotes cache
+            std::lock_guard<std::mutex> lock(quotesCacheMutex);
+            quotesCache.insert(batchQuotes.begin(), batchQuotes.end());
         }
     }
     
     m_logger->info("Successfully fetched quotes for {}/{} options", 
                  quotesCache.size(), allRequiredOptionTokens.size());
     
-    // Step 3: Now process combinations using improved batch processing with higher parallelism
-    // We'll separate the combinations into batches just to manage memory and logging
-    // but process as many in parallel as the thread pool can handle
+    // Step 3: Now process combinations using highly parallel processing
+    // Dynamically adjust based on system capabilities
     
-    // Maximum number of combinations to process in a single parallel batch
-    // Make smaller batches for logging purposes, not for restricting parallelism
-    const size_t loggingBatchSize = batchSize;
-    const size_t numBatches = (combinations.size() + loggingBatchSize - 1) / loggingBatchSize;
+    // Get the optimal concurrency level based on system resources
+    size_t optimalThreads = m_threadPool->getNumThreads();
+    size_t maxConcurrentJobs = optimalThreads * 4; // Allow more jobs than threads for I/O-bound work
     
     // We'll use this to track the progress of all the parallel tasks
     std::atomic<size_t> completedCombinations(0);
+    size_t totalCombinations = combinations.size();
     
     // To control the number of submitted jobs
-    size_t maxOutstandingJobs = m_threadPool->getNumThreads() * 2; // Allow 2 tasks per thread
     std::atomic<size_t> activeJobs(0);
     std::mutex activeJobsMutex;
     std::condition_variable activeJobsCV;
     
-    // Process all combinations in parallel, but manage job submission rate
-    std::vector<std::future<BoxSpreadModel>> allFutures;
-    allFutures.reserve(combinations.size());
+    // For results collection
+    std::vector<BoxSpreadModel> validSpreads;
+    std::mutex spreadsMutex;
     
-    m_logger->info("Processing all combinations in parallel using {} threads", m_threadPool->getNumThreads());
+    // Process combinations in parallel with adaptive batch sizes
+    m_logger->info("Processing {} combinations with up to {} concurrent jobs", 
+                 totalCombinations, maxConcurrentJobs);
     
-    for (size_t i = 0; i < combinations.size(); ++i) {
-        // Wait if we have too many outstanding jobs
+    // Create a progress tracking timer
+    auto startTime = std::chrono::high_resolution_clock::now();
+    auto lastProgressTime = startTime;
+    std::atomic<bool> progressTimerRunning(true);
+    
+    // Start a progress reporting thread
+    std::thread progressThread([&]() {
+        while (progressTimerRunning.load()) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            
+            auto now = std::chrono::high_resolution_clock::now();
+            auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - startTime).count();
+            auto completed = completedCombinations.load();
+            
+            if (completed > 0 && totalCombinations > 0) {
+                double percentComplete = (double)completed / totalCombinations * 100.0;
+                double itemsPerSecond = (double)completed / std::max(1.0, (double)elapsed);
+                double estimatedSecondsRemaining = (totalCombinations - completed) / std::max(0.1, itemsPerSecond);
+                
+                m_logger->info("Progress: {:.1f}% ({}/{}) - {:.1f} combinations/sec - Est. remaining: {:.0f} sec", 
+                             percentComplete, completed, totalCombinations, 
+                             itemsPerSecond, estimatedSecondsRemaining);
+            }
+        }
+    });
+    
+    // Create a work queue for all combinations
+    std::queue<std::pair<double, double>> workQueue;
+    for (const auto& combo : combinations) {
+        workQueue.push(combo);
+    }
+    std::mutex workQueueMutex;
+    
+    // Function to process a batch of combinations
+    auto processBatch = [&](size_t batchSize) {
+        std::vector<std::pair<double, double>> batchCombinations;
+        
+        // Get a batch of work from the queue
         {
-            std::unique_lock<std::mutex> lock(activeJobsMutex);
-            activeJobsCV.wait(lock, [&]() { return activeJobs.load() < maxOutstandingJobs; });
-            activeJobs++;
+            std::lock_guard<std::mutex> lock(workQueueMutex);
+            for (size_t i = 0; i < batchSize && !workQueue.empty(); ++i) {
+                batchCombinations.push_back(workQueue.front());
+                workQueue.pop();
+            }
         }
         
-        const auto& combination = combinations[i];
-        
-        // Log the start of a new logical batch
-        if (i % loggingBatchSize == 0) {
-            size_t batchIndex = i / loggingBatchSize;
-            m_logger->info("Processing batch {}/{} ({} combinations)", 
-                         batchIndex + 1, numBatches, 
-                         std::min(loggingBatchSize, combinations.size() - i));
+        if (batchCombinations.empty()) {
+            return; // No more work
         }
         
-        allFutures.push_back(m_threadPool->enqueue(
-            [this, underlying, exchange, expiry, combination, &optionsByStrike, 
-             &quotesCache, &completedCombinations, &activeJobs, &activeJobsMutex, &activeJobsCV]() {
-                // Create box spread with cached options
-                BoxSpreadModel boxSpread(underlying, exchange, combination.first, combination.second, expiry);
+        // Process each combination in the batch
+        std::vector<BoxSpreadModel> batchResults;
+        
+        for (const auto& combination : batchCombinations) {
+            // Create box spread with cached options
+            BoxSpreadModel boxSpread(underlying, exchange, combination.first, combination.second, expiry);
+            
+            // Get options from cache
+            auto lowerStrikeIt = optionsByStrike.find(combination.first);
+            auto higherStrikeIt = optionsByStrike.find(combination.second);
+            
+            if (lowerStrikeIt != optionsByStrike.end() && higherStrikeIt != optionsByStrike.end()) {
+                // Set options
+                boxSpread.longCallLower = lowerStrikeIt->second.first;    // Call at lower strike
+                boxSpread.shortPutLower = lowerStrikeIt->second.second;   // Put at lower strike
+                boxSpread.shortCallHigher = higherStrikeIt->second.first; // Call at higher strike
+                boxSpread.longPutHigher = higherStrikeIt->second.second;  // Put at higher strike
                 
-                // Get options from cache
-                auto lowerStrikeIt = optionsByStrike.find(combination.first);
-                auto higherStrikeIt = optionsByStrike.find(combination.second);
-                
-                if (lowerStrikeIt != optionsByStrike.end() && higherStrikeIt != optionsByStrike.end()) {
-                    // Set options
-                    boxSpread.longCallLower = lowerStrikeIt->second.first;   // Call at lower strike
-                    boxSpread.shortPutLower = lowerStrikeIt->second.second;  // Put at lower strike
-                    boxSpread.shortCallHigher = higherStrikeIt->second.first; // Call at higher strike
-                    boxSpread.longPutHigher = higherStrikeIt->second.second;  // Put at higher strike
-                    
-                    // Get market data from quotes cache
-                    auto updateFromCache = [&quotesCache](InstrumentModel& option) {
-                        auto it = quotesCache.find(option.instrumentToken);
-                        if (it != quotesCache.end()) {
-                            option = it->second;
-                            return true;
-                        }
-                        return false;
-                    };
-                    
-                    // Update all options with market data
-                    bool dataComplete = 
-                        updateFromCache(boxSpread.longCallLower) &&
-                        updateFromCache(boxSpread.shortPutLower) &&
-                        updateFromCache(boxSpread.shortCallHigher) &&
-                        updateFromCache(boxSpread.longPutHigher);
-                    
-                    if (!dataComplete) {
-                        m_logger->warn("Box spread does not have complete market data: {}", boxSpread.id);
+                // Get market data from quotes cache
+                auto updateFromCache = [&quotesCache](InstrumentModel& option) {
+                    auto it = quotesCache.find(option.instrumentToken);
+                    if (it != quotesCache.end()) {
+                        option = it->second;
+                        return true;
                     }
+                    return false;
+                };
+                
+                // Update all options with market data
+                bool dataComplete = 
+                    updateFromCache(boxSpread.longCallLower) &&
+                    updateFromCache(boxSpread.shortPutLower) &&
+                    updateFromCache(boxSpread.shortCallHigher) &&
+                    updateFromCache(boxSpread.longPutHigher);
+                
+                if (!dataComplete) {
+                    m_logger->warn("Box spread does not have complete market data: {}", boxSpread.id);
                 }
                 
                 // Analyze the box spread
                 BoxSpreadModel analyzedBoxSpread = analyzeBoxSpread(boxSpread);
                 
-                // Increment the counter and let another job run
-                completedCombinations++;
-                
-                // Update the active job count and signal availability for more jobs
+                // Only keep valid spreads
+                if (analyzedBoxSpread.hasCompleteMarketData()) {
+                    batchResults.push_back(analyzedBoxSpread);
+                }
+            }
+            
+            // Update completed count
+            completedCombinations++;
+        }
+        
+        // Add results to the main result vector
+        if (!batchResults.empty()) {
+            std::lock_guard<std::mutex> lock(spreadsMutex);
+            validSpreads.insert(validSpreads.end(), batchResults.begin(), batchResults.end());
+        }
+    };
+    
+    // Create worker threads to process batches
+    std::vector<std::thread> workers;
+    for (size_t i = 0; i < optimalThreads; i++) {
+        workers.push_back(std::thread([&, i]() {
+            // Each worker processes batches until the queue is empty
+            while (true) {
+                // Check if there's work to do
                 {
-                    std::lock_guard<std::mutex> lock(activeJobsMutex);
-                    activeJobs--;
-                    activeJobsCV.notify_one();
+                    std::lock_guard<std::mutex> lock(workQueueMutex);
+                    if (workQueue.empty()) {
+                        break; // No more work
+                    }
                 }
                 
-                return analyzedBoxSpread;
+                // Process a batch (adaptive size based on remaining work)
+                size_t adaptiveBatchSize;
+                {
+                    std::lock_guard<std::mutex> lock(workQueueMutex);
+                    // Start with smaller batches and increase as we make progress
+                    double progress = (double)completedCombinations.load() / totalCombinations;
+                    adaptiveBatchSize = std::max<size_t>(1, std::min<size_t>(50, workQueue.size() / optimalThreads));
+                }
+                
+                processBatch(adaptiveBatchSize);
             }
-        ));
+        }));
     }
     
-    // Collect results from all futures
-    for (auto& future : allFutures) {
-        auto boxSpread = future.get();
-        if (boxSpread.hasCompleteMarketData()) {
-            allSpreads.push_back(boxSpread);
+    // Wait for all workers to complete
+    for (auto& worker : workers) {
+        if (worker.joinable()) {
+            worker.join();
         }
     }
     
-    m_logger->info("Processed all {} combinations across {} logical batches", 
-                 combinations.size(), numBatches);
+    // Stop the progress thread
+    progressTimerRunning.store(false);
+    if (progressThread.joinable()) {
+        progressThread.join();
+    }
+    
+    // Log final statistics
+    auto endTime = std::chrono::high_resolution_clock::now();
+    auto totalTime = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime).count();
+    m_logger->info("Completed analysis of {} combinations in {} seconds ({} combinations/sec)", 
+                 totalCombinations, totalTime, 
+                 totalCombinations / std::max(1.0, (double)totalTime));
     
     // Filter for profitable spreads
-    auto profitableSpreads = filterProfitableSpreads(allSpreads);
+    auto profitableSpreads = filterProfitableSpreads(validSpreads);
     
-    m_logger->info("Found {} profitable spreads out of {} combinations", 
-                 profitableSpreads.size(), combinations.size());
+    m_logger->info("Found {} profitable spreads out of {} valid combinations", 
+                 profitableSpreads.size(), validSpreads.size());
     
     return profitableSpreads;
 }

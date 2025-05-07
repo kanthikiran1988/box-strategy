@@ -858,6 +858,7 @@ CMakeFiles/box_strategy.dir/src/main.cpp.o: \
   /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPool.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/condition_variable \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_callback.h \
+  /Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPoolOptimizer.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/config/ConfigManager.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/config/../utils/Logger.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/external/../external/json_wrapper.hpp \
@@ -911,6 +912,7 @@ CMakeFiles/box_strategy.dir/src/main.cpp.o: \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../risk/../config/ConfigManager.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../risk/../models/BoxSpreadModel.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../risk/RiskCalculator.hpp \
+  /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../utils/ThreadPoolOptimizer.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/MarketDepthAnalyzer.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/risk/RiskCalculator.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/risk/FeeCalculator.hpp \

@@ -7,9 +7,9 @@
         "rate_limits": {
             "default": 10,
             "instruments": 1,
-            "ltp": 15,
-            "ohlc": 15,
-            "quote": 15
+            "ltp": 60,
+            "ohlc": 60,
+            "quote": 60
         },
         "secret": "xh4v29snrfmne6ccf2xhlj60s6tf79hs"
     },
@@ -40,8 +40,8 @@
     },
     "option_chain": {
         "pipeline": {
-            "batch_size": 50,
-            "delay_between_expiries_ms": 100,
+            "batch_size": 20,
+            "delay_between_expiries_ms": 0,
             "process_expiries_sequentially": false
         },
         "strike_range_percent": 5.0

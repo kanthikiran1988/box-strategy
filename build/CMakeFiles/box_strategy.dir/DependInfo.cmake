@@ -25,6 +25,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/kanthikiran/CLionProjects/box-strategy/src/utils/HttpClient.cpp" "CMakeFiles/box_strategy.dir/src/utils/HttpClient.cpp.o" "gcc" "CMakeFiles/box_strategy.dir/src/utils/HttpClient.cpp.o.d"
   "/Users/kanthikiran/CLionProjects/box-strategy/src/utils/Logger.cpp" "CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o" "gcc" "CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o.d"
   "/Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPool.cpp" "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o" "gcc" "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o.d"
+  "/Users/kanthikiran/CLionProjects/box-strategy/src/utils/ThreadPoolOptimizer.cpp" "CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o" "gcc" "CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

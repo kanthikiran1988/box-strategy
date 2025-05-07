@@ -21,6 +21,7 @@
 #include "../models/BoxSpreadModel.hpp"
 #include "../risk/FeeCalculator.hpp"
 #include "../risk/RiskCalculator.hpp"
+#include "../utils/ThreadPoolOptimizer.hpp"
 
 namespace BoxStrategy {
 
@@ -54,6 +55,14 @@ public:
      * @brief Destructor
      */
     ~CombinationAnalyzer() = default;
+    
+    /**
+     * @brief Set the ThreadPoolOptimizer for enhanced workload management
+     * @param optimizer Thread pool optimizer instance
+     */
+    void setThreadPoolOptimizer(std::shared_ptr<ThreadPoolOptimizer> optimizer) {
+        m_threadPoolOptimizer = optimizer;
+    }
     
     /**
      * @brief Find profitable box spreads for an underlying
@@ -180,6 +189,7 @@ private:
     std::shared_ptr<RiskCalculator> m_riskCalculator;      ///< Risk calculator
     std::shared_ptr<ThreadPool> m_threadPool;              ///< Thread pool
     std::shared_ptr<Logger> m_logger;                      ///< Logger instance
+    std::shared_ptr<ThreadPoolOptimizer> m_threadPoolOptimizer; ///< Thread pool optimizer instance
     
     // Cache for available strikes and instruments
     std::unordered_map<std::string, std::vector<double>> m_strikesCache;
