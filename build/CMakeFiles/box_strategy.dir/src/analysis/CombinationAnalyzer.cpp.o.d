@@ -894,7 +894,6 @@ CMakeFiles/box_strategy.dir/src/analysis/CombinationAnalyzer.cpp.o: \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../analysis/../market/../models/InstrumentModel.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../analysis/../market/../config/ConfigManager.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../analysis/../market/ExpiryManager.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/regex \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../analysis/../market/../market/MarketDataManager.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../analysis/../models/BoxSpreadModel.hpp \
   /Users/kanthikiran/CLionProjects/box-strategy/src/analysis/../analysis/../models/../models/InstrumentModel.hpp \

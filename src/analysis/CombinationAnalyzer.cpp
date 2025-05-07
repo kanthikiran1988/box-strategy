@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <sstream>
 #include <cmath>
+#include <unordered_map>
 
 namespace BoxStrategy {
 
@@ -136,23 +137,163 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     auto combinations = generateStrikeCombinations(underlying, exchange, expiry, strikes);
     m_logger->info("Generated {} strike combinations", combinations.size());
     
-    // Analyze each combination in parallel
-    std::vector<std::future<BoxSpreadModel>> futures;
-    for (const auto& combination : combinations) {
-        futures.push_back(m_threadPool->enqueue(
-            [this, underlying, exchange, expiry, combination]() {
-                BoxSpreadModel boxSpread = getBoxSpreadOptions(
-                    underlying, exchange, expiry, combination.first, combination.second);
-                return analyzeBoxSpread(boxSpread);
+    // Configure batch processing 
+    size_t batchSize = m_configManager->getIntValue("option_chain/pipeline/batch_size", 3);
+    int delayBetweenBatchesMs = m_configManager->getIntValue("option_chain/pipeline/delay_between_batches_ms", 4000);
+    
+    // Process in smaller batches to avoid rate limits
+    std::vector<BoxSpreadModel> allSpreads;
+    
+    // Step 1: Pre-load all required options for all combinations
+    // This has two benefits:
+    // 1. We cache the option data to reduce redundant getAllInstruments calls
+    // 2. We can make fewer, larger batched quote requests instead of many small ones
+    
+    m_logger->info("Pre-loading options for all combinations");
+    
+    std::unordered_map<double, std::pair<InstrumentModel, InstrumentModel>> optionsByStrike;
+    std::vector<uint64_t> allRequiredOptionTokens;
+    
+    // Get all instruments once
+    auto instrumentsFuture = m_marketDataManager->getAllInstruments();
+    auto allInstruments = instrumentsFuture.get();
+    
+    // First pass: Find all required options by strike
+    for (const auto& strike : strikes) {
+        // Find call option for this strike
+        InstrumentModel callOption;
+        InstrumentModel putOption;
+        
+        for (const auto& instrument : allInstruments) {
+            if (instrument.type == InstrumentType::OPTION && 
+                instrument.underlying == underlying &&
+                instrument.exchange == exchange &&
+                instrument.expiry == expiry &&
+                std::abs(instrument.strikePrice - strike) < 0.01) {
+                
+                if (instrument.optionType == OptionType::CALL && callOption.instrumentToken == 0) {
+                    callOption = instrument;
+                } else if (instrument.optionType == OptionType::PUT && putOption.instrumentToken == 0) {
+                    putOption = instrument;
+                }
+                
+                // If we found both, break early
+                if (callOption.instrumentToken != 0 && putOption.instrumentToken != 0) {
+                    break;
+                }
             }
-        ));
+        }
+        
+        // Store the options for this strike
+        if (callOption.instrumentToken != 0 && putOption.instrumentToken != 0) {
+            optionsByStrike[strike] = std::make_pair(callOption, putOption);
+            allRequiredOptionTokens.push_back(callOption.instrumentToken);
+            allRequiredOptionTokens.push_back(putOption.instrumentToken);
+        }
     }
     
-    // Collect results
-    std::vector<BoxSpreadModel> allSpreads;
-    for (auto& future : futures) {
-        auto boxSpread = future.get();
-        allSpreads.push_back(boxSpread);
+    m_logger->info("Found options for {} strikes, requiring {} quotes", 
+                 optionsByStrike.size(), allRequiredOptionTokens.size());
+    
+    // Step 2: Fetch all required quotes in batches of up to 500 instruments per API call
+    std::unordered_map<uint64_t, InstrumentModel> quotesCache;
+    const size_t maxQuoteBatchSize = 500; // Zerodha API limit
+    
+    for (size_t i = 0; i < allRequiredOptionTokens.size(); i += maxQuoteBatchSize) {
+        size_t batchEnd = std::min(i + maxQuoteBatchSize, allRequiredOptionTokens.size());
+        std::vector<uint64_t> batchTokens(allRequiredOptionTokens.begin() + i, 
+                                        allRequiredOptionTokens.begin() + batchEnd);
+        
+        m_logger->info("Fetching quotes for batch of {} options", batchTokens.size());
+        
+        auto quotesFuture = m_marketDataManager->getQuotes(batchTokens);
+        auto quotes = quotesFuture.get();
+        
+        // Add to cache
+        for (const auto& [token, quote] : quotes) {
+            quotesCache[token] = quote;
+        }
+        
+        // Add delay if there are more batches to process
+        if (batchEnd < allRequiredOptionTokens.size()) {
+            m_logger->debug("Waiting {} ms before fetching next batch of quotes", delayBetweenBatchesMs);
+            std::this_thread::sleep_for(std::chrono::milliseconds(delayBetweenBatchesMs));
+        }
+    }
+    
+    m_logger->info("Successfully fetched quotes for {}/{} options", 
+                 quotesCache.size(), allRequiredOptionTokens.size());
+    
+    // Step 3: Now process combinations in batches using the cached quotes
+    for (size_t batchStart = 0; batchStart < combinations.size(); batchStart += batchSize) {
+        size_t batchEnd = std::min(batchStart + batchSize, combinations.size());
+        size_t currentBatchSize = batchEnd - batchStart;
+        
+        m_logger->info("Processing batch {}/{} ({} combinations)",
+                    (batchStart / batchSize) + 1,
+                    (combinations.size() + batchSize - 1) / batchSize,
+                    currentBatchSize);
+        
+        // Analyze combinations in this batch
+        std::vector<std::future<BoxSpreadModel>> futures;
+        for (size_t i = batchStart; i < batchEnd; ++i) {
+            const auto& combination = combinations[i];
+            futures.push_back(m_threadPool->enqueue(
+                [this, underlying, exchange, expiry, combination, &optionsByStrike, &quotesCache]() {
+                    // Create box spread with cached options
+                    BoxSpreadModel boxSpread(underlying, exchange, combination.first, combination.second, expiry);
+                    
+                    // Get options from cache
+                    auto lowerStrikeIt = optionsByStrike.find(combination.first);
+                    auto higherStrikeIt = optionsByStrike.find(combination.second);
+                    
+                    if (lowerStrikeIt != optionsByStrike.end() && higherStrikeIt != optionsByStrike.end()) {
+                        // Set options
+                        boxSpread.longCallLower = lowerStrikeIt->second.first;   // Call at lower strike
+                        boxSpread.shortPutLower = lowerStrikeIt->second.second;  // Put at lower strike
+                        boxSpread.shortCallHigher = higherStrikeIt->second.first; // Call at higher strike
+                        boxSpread.longPutHigher = higherStrikeIt->second.second;  // Put at higher strike
+                        
+                        // Get market data from quotes cache
+                        auto updateFromCache = [&quotesCache](InstrumentModel& option) {
+                            auto it = quotesCache.find(option.instrumentToken);
+                            if (it != quotesCache.end()) {
+                                option = it->second;
+                                return true;
+                            }
+                            return false;
+                        };
+                        
+                        // Update all options with market data
+                        bool dataComplete = 
+                            updateFromCache(boxSpread.longCallLower) &&
+                            updateFromCache(boxSpread.shortPutLower) &&
+                            updateFromCache(boxSpread.shortCallHigher) &&
+                            updateFromCache(boxSpread.longPutHigher);
+                        
+                        if (!dataComplete) {
+                            m_logger->warn("Incomplete market data for box spread: {}", boxSpread.id);
+                        }
+                    }
+                    
+                    return analyzeBoxSpread(boxSpread);
+                }
+            ));
+        }
+        
+        // Collect results for this batch
+        for (auto& future : futures) {
+            auto boxSpread = future.get();
+            if (boxSpread.hasCompleteMarketData()) {
+                allSpreads.push_back(boxSpread);
+            }
+        }
+        
+        // Add delay between batches to avoid rate limits
+        if (batchEnd < combinations.size()) {
+            m_logger->debug("Waiting {} ms before processing next batch", delayBetweenBatchesMs);
+            std::this_thread::sleep_for(std::chrono::milliseconds(delayBetweenBatchesMs));
+        }
     }
     
     // Filter for profitable spreads
