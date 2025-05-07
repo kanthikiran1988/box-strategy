@@ -69,7 +69,7 @@
         "underlying": "NIFTY"
     },
     "system": {
-        "log_level": "INFO",
+        "log_level": "DEBUG",
         "num_threads": 8
     },
     "test": {

@@ -1,7 +1,7 @@
 {
     "api": {
-        "instruments_cache_ttl_minutes": 1440,
         "instruments_cache_file": "instruments_cache.csv",
+        "instruments_cache_ttl_minutes": 1440,
         "key": "6vhmpqt5hv49r01o",
         "quote_batch_size": 500,
         "rate_limits": {
@@ -14,8 +14,8 @@
         "secret": "xh4v29snrfmne6ccf2xhlj60s6tf79hs"
     },
     "auth": {
-        "access_token": "8QyBpw09YvEx3ZJjqadaEtxAxPGOd0vq",
-        "expiry": "2025-05-07 19:13:24"
+        "access_token": "RykhOTbW3nPBs6TIZAdZCLG1RQjwQFl5",
+        "expiry": "2025-05-08 17:19:07"
     },
     "debug": {
         "test_option_chain": true,
@@ -39,12 +39,12 @@
         "stt_percentage": 0.05
     },
     "option_chain": {
-        "strike_range_percent": 5.0,
         "pipeline": {
-            "process_expiries_sequentially": true,
+            "batch_size": 100,
             "delay_between_expiries_ms": 1000,
-            "batch_size": 100
-        }
+            "process_expiries_sequentially": true
+        },
+        "strike_range_percent": 5.0
     },
     "paper_trading": {
         "base_slippage_percent": 0.1,

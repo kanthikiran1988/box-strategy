@@ -48,9 +48,9 @@ InstrumentType InstrumentModel::stringToInstrumentType(const std::string& typeSt
     if (typeStr == "CURRENCY")                                      return InstrumentType::CURRENCY;
     if (typeStr == "COMMODITY")                                     return InstrumentType::COMMODITY;
     
-    // Properly handle the case when options are classified as "OTHER" or empty
+    // Enhanced detection for NIFTY options that might be classified as "OTHER"
     if (typeStr == "OTHER" || typeStr.empty()) {
-        // This is a fallback - we'll need to check trading symbol in MarketDataManager
+        // This will be handled in MarketDataManager using trading symbol patterns
         return InstrumentType::UNKNOWN;
     }
     

@@ -10,6 +10,7 @@
 #include <memory>
 #include <unordered_map>
 #include <chrono>
+#include <regex>
 #include "../utils/Logger.hpp"
 #include "../config/ConfigManager.hpp"
 #include "../market/MarketDataManager.hpp"
@@ -49,6 +50,13 @@ public:
     std::pair<std::vector<std::chrono::system_clock::time_point>, 
               std::vector<std::chrono::system_clock::time_point>> 
     getExpiries(bool includeWeekly, bool includeMonthly);
+    
+    /**
+     * @brief Extract expiry date from NIFTY option symbol
+     * @param symbol Trading symbol of the NIFTY option
+     * @return Extracted expiry date or invalid time point if extraction fails
+     */
+    std::chrono::system_clock::time_point extractExpiryFromNiftySymbol(const std::string& symbol);
     
     /**
      * @brief Refresh the list of available expiries
