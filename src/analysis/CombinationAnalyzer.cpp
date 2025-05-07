@@ -133,13 +133,13 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
         return {};
     }
     
-    // Generate all possible strike combinations
-    auto combinations = generateStrikeCombinations(underlying, exchange, expiry, strikes);
+    // Generate all possible strike combinations using parallel implementation
+    auto combinations = generateStrikeCombinationsParallel(underlying, exchange, expiry, strikes);
     m_logger->info("Generated {} strike combinations", combinations.size());
     
     // Configure batch processing 
-    size_t batchSize = m_configManager->getIntValue("option_chain/pipeline/batch_size", 3);
-    int delayBetweenBatchesMs = m_configManager->getIntValue("option_chain/pipeline/delay_between_batches_ms", 4000);
+    size_t batchSize = m_configManager->getIntValue("option_chain/pipeline/batch_size", 50);
+    int delayBetweenBatchesMs = m_configManager->getIntValue("option_chain/pipeline/delay_between_batches_ms", 2000);
     
     // Process in smaller batches to avoid rate limits
     std::vector<BoxSpreadModel> allSpreads;
@@ -224,77 +224,115 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     m_logger->info("Successfully fetched quotes for {}/{} options", 
                  quotesCache.size(), allRequiredOptionTokens.size());
     
-    // Step 3: Now process combinations in batches using the cached quotes
-    for (size_t batchStart = 0; batchStart < combinations.size(); batchStart += batchSize) {
-        size_t batchEnd = std::min(batchStart + batchSize, combinations.size());
-        size_t currentBatchSize = batchEnd - batchStart;
+    // Step 3: Now process combinations using improved batch processing with higher parallelism
+    // We'll separate the combinations into batches just to manage memory and logging
+    // but process as many in parallel as the thread pool can handle
+    
+    // Maximum number of combinations to process in a single parallel batch
+    // Make smaller batches for logging purposes, not for restricting parallelism
+    const size_t loggingBatchSize = batchSize;
+    const size_t numBatches = (combinations.size() + loggingBatchSize - 1) / loggingBatchSize;
+    
+    // We'll use this to track the progress of all the parallel tasks
+    std::atomic<size_t> completedCombinations(0);
+    
+    // To control the number of submitted jobs
+    size_t maxOutstandingJobs = m_threadPool->getNumThreads() * 2; // Allow 2 tasks per thread
+    std::atomic<size_t> activeJobs(0);
+    std::mutex activeJobsMutex;
+    std::condition_variable activeJobsCV;
+    
+    // Process all combinations in parallel, but manage job submission rate
+    std::vector<std::future<BoxSpreadModel>> allFutures;
+    allFutures.reserve(combinations.size());
+    
+    m_logger->info("Processing all combinations in parallel using {} threads", m_threadPool->getNumThreads());
+    
+    for (size_t i = 0; i < combinations.size(); ++i) {
+        // Wait if we have too many outstanding jobs
+        {
+            std::unique_lock<std::mutex> lock(activeJobsMutex);
+            activeJobsCV.wait(lock, [&]() { return activeJobs.load() < maxOutstandingJobs; });
+            activeJobs++;
+        }
         
-        m_logger->info("Processing batch {}/{} ({} combinations)",
-                    (batchStart / batchSize) + 1,
-                    (combinations.size() + batchSize - 1) / batchSize,
-                    currentBatchSize);
+        const auto& combination = combinations[i];
         
-        // Analyze combinations in this batch
-        std::vector<std::future<BoxSpreadModel>> futures;
-        for (size_t i = batchStart; i < batchEnd; ++i) {
-            const auto& combination = combinations[i];
-            futures.push_back(m_threadPool->enqueue(
-                [this, underlying, exchange, expiry, combination, &optionsByStrike, &quotesCache]() {
-                    // Create box spread with cached options
-                    BoxSpreadModel boxSpread(underlying, exchange, combination.first, combination.second, expiry);
+        // Log the start of a new logical batch
+        if (i % loggingBatchSize == 0) {
+            size_t batchIndex = i / loggingBatchSize;
+            m_logger->info("Processing batch {}/{} ({} combinations)", 
+                         batchIndex + 1, numBatches, 
+                         std::min(loggingBatchSize, combinations.size() - i));
+        }
+        
+        allFutures.push_back(m_threadPool->enqueue(
+            [this, underlying, exchange, expiry, combination, &optionsByStrike, 
+             &quotesCache, &completedCombinations, &activeJobs, &activeJobsMutex, &activeJobsCV]() {
+                // Create box spread with cached options
+                BoxSpreadModel boxSpread(underlying, exchange, combination.first, combination.second, expiry);
+                
+                // Get options from cache
+                auto lowerStrikeIt = optionsByStrike.find(combination.first);
+                auto higherStrikeIt = optionsByStrike.find(combination.second);
+                
+                if (lowerStrikeIt != optionsByStrike.end() && higherStrikeIt != optionsByStrike.end()) {
+                    // Set options
+                    boxSpread.longCallLower = lowerStrikeIt->second.first;   // Call at lower strike
+                    boxSpread.shortPutLower = lowerStrikeIt->second.second;  // Put at lower strike
+                    boxSpread.shortCallHigher = higherStrikeIt->second.first; // Call at higher strike
+                    boxSpread.longPutHigher = higherStrikeIt->second.second;  // Put at higher strike
                     
-                    // Get options from cache
-                    auto lowerStrikeIt = optionsByStrike.find(combination.first);
-                    auto higherStrikeIt = optionsByStrike.find(combination.second);
-                    
-                    if (lowerStrikeIt != optionsByStrike.end() && higherStrikeIt != optionsByStrike.end()) {
-                        // Set options
-                        boxSpread.longCallLower = lowerStrikeIt->second.first;   // Call at lower strike
-                        boxSpread.shortPutLower = lowerStrikeIt->second.second;  // Put at lower strike
-                        boxSpread.shortCallHigher = higherStrikeIt->second.first; // Call at higher strike
-                        boxSpread.longPutHigher = higherStrikeIt->second.second;  // Put at higher strike
-                        
-                        // Get market data from quotes cache
-                        auto updateFromCache = [&quotesCache](InstrumentModel& option) {
-                            auto it = quotesCache.find(option.instrumentToken);
-                            if (it != quotesCache.end()) {
-                                option = it->second;
-                                return true;
-                            }
-                            return false;
-                        };
-                        
-                        // Update all options with market data
-                        bool dataComplete = 
-                            updateFromCache(boxSpread.longCallLower) &&
-                            updateFromCache(boxSpread.shortPutLower) &&
-                            updateFromCache(boxSpread.shortCallHigher) &&
-                            updateFromCache(boxSpread.longPutHigher);
-                        
-                        if (!dataComplete) {
-                            m_logger->warn("Incomplete market data for box spread: {}", boxSpread.id);
+                    // Get market data from quotes cache
+                    auto updateFromCache = [&quotesCache](InstrumentModel& option) {
+                        auto it = quotesCache.find(option.instrumentToken);
+                        if (it != quotesCache.end()) {
+                            option = it->second;
+                            return true;
                         }
-                    }
+                        return false;
+                    };
                     
-                    return analyzeBoxSpread(boxSpread);
+                    // Update all options with market data
+                    bool dataComplete = 
+                        updateFromCache(boxSpread.longCallLower) &&
+                        updateFromCache(boxSpread.shortPutLower) &&
+                        updateFromCache(boxSpread.shortCallHigher) &&
+                        updateFromCache(boxSpread.longPutHigher);
+                    
+                    if (!dataComplete) {
+                        m_logger->warn("Box spread does not have complete market data: {}", boxSpread.id);
+                    }
                 }
-            ));
-        }
-        
-        // Collect results for this batch
-        for (auto& future : futures) {
-            auto boxSpread = future.get();
-            if (boxSpread.hasCompleteMarketData()) {
-                allSpreads.push_back(boxSpread);
+                
+                // Analyze the box spread
+                BoxSpreadModel analyzedBoxSpread = analyzeBoxSpread(boxSpread);
+                
+                // Increment the counter and let another job run
+                completedCombinations++;
+                
+                // Update the active job count and signal availability for more jobs
+                {
+                    std::lock_guard<std::mutex> lock(activeJobsMutex);
+                    activeJobs--;
+                    activeJobsCV.notify_one();
+                }
+                
+                return analyzedBoxSpread;
             }
-        }
-        
-        // Add delay between batches to avoid rate limits
-        if (batchEnd < combinations.size()) {
-            m_logger->debug("Waiting {} ms before processing next batch", delayBetweenBatchesMs);
-            std::this_thread::sleep_for(std::chrono::milliseconds(delayBetweenBatchesMs));
+        ));
+    }
+    
+    // Collect results from all futures
+    for (auto& future : allFutures) {
+        auto boxSpread = future.get();
+        if (boxSpread.hasCompleteMarketData()) {
+            allSpreads.push_back(boxSpread);
         }
     }
+    
+    m_logger->info("Processed all {} combinations across {} logical batches", 
+                 combinations.size(), numBatches);
     
     // Filter for profitable spreads
     auto profitableSpreads = filterProfitableSpreads(allSpreads);
@@ -359,14 +397,14 @@ std::vector<std::pair<double, double>> CombinationAnalyzer::generateStrikeCombin
     const std::chrono::system_clock::time_point& expiry,
     const std::vector<double>& strikes) {
     
-    m_logger->debug("Generating strike combinations for {}:{} with expiry {}", 
+    m_logger->debug("Generating strike combinations for {}:{} with expiry {}",
                   underlying, exchange, InstrumentModel::formatDate(expiry));
     
     std::vector<std::pair<double, double>> combinations;
     
-    // Get configuration
-    double minStrikeDiff = m_configManager->getDoubleValue("strategy/min_strike_diff", 100.0);
-    double maxStrikeDiff = m_configManager->getDoubleValue("strategy/max_strike_diff", 1000.0);
+    // Get configuration parameters
+    double minStrikeDiff = m_configManager->getDoubleValue("strategy/min_strike_diff", 50.0);
+    double maxStrikeDiff = m_configManager->getDoubleValue("strategy/max_strike_diff", 500.0);
     
     // Generate combinations
     for (size_t i = 0; i < strikes.size(); ++i) {
@@ -384,6 +422,74 @@ std::vector<std::pair<double, double>> CombinationAnalyzer::generateStrikeCombin
     
     m_logger->debug("Generated {} combinations with strike difference between {} and {}", 
                   combinations.size(), minStrikeDiff, maxStrikeDiff);
+    
+    return combinations;
+}
+
+std::vector<std::pair<double, double>> CombinationAnalyzer::generateStrikeCombinationsParallel(
+    const std::string& underlying, 
+    const std::string& exchange,
+    const std::chrono::system_clock::time_point& expiry,
+    const std::vector<double>& strikes) {
+    
+    m_logger->debug("Generating strike combinations in parallel for {}:{} with expiry {}",
+                 underlying, exchange, InstrumentModel::formatDate(expiry));
+    
+    // Get configuration parameters
+    double minStrikeDiff = m_configManager->getDoubleValue("strategy/min_strike_diff", 50.0);
+    double maxStrikeDiff = m_configManager->getDoubleValue("strategy/max_strike_diff", 500.0);
+    
+    std::vector<std::pair<double, double>> combinations;
+    std::mutex combinationsMutex;
+    
+    // Determine number of threads to use
+    size_t numThreads = m_threadPool->getNumThreads();
+    size_t numChunks = std::min(numThreads, strikes.size());
+    
+    // If we have a very small dataset, just use the sequential version
+    if (numChunks < 2 || strikes.size() < 10) {
+        return generateStrikeCombinations(underlying, exchange, expiry, strikes);
+    }
+    
+    // Split the work into chunks
+    std::vector<std::future<void>> futures;
+    for (size_t chunk = 0; chunk < numChunks; ++chunk) {
+        futures.push_back(m_threadPool->enqueue(
+            [&strikes, &combinations, &combinationsMutex, chunk, numChunks, minStrikeDiff, maxStrikeDiff]() {
+                std::vector<std::pair<double, double>> localCombinations;
+                
+                // Process a chunk of the strike combinations
+                for (size_t i = chunk; i < strikes.size(); i += numChunks) {
+                    for (size_t j = i + 1; j < strikes.size(); ++j) {
+                        double lowerStrike = strikes[i];
+                        double higherStrike = strikes[j];
+                        double diff = higherStrike - lowerStrike;
+                        
+                        // Check if strike difference is within range
+                        if (diff >= minStrikeDiff && diff <= maxStrikeDiff) {
+                            localCombinations.emplace_back(lowerStrike, higherStrike);
+                        }
+                    }
+                }
+                
+                // Add local combinations to the global vector
+                if (!localCombinations.empty()) {
+                    std::lock_guard<std::mutex> lock(combinationsMutex);
+                    combinations.insert(combinations.end(), 
+                                      localCombinations.begin(), 
+                                      localCombinations.end());
+                }
+            }
+        ));
+    }
+    
+    // Wait for all chunks to complete
+    for (auto& future : futures) {
+        future.wait();
+    }
+    
+    m_logger->debug("Generated {} combinations in parallel with strike difference between {} and {}", 
+                 combinations.size(), minStrikeDiff, maxStrikeDiff);
     
     return combinations;
 }

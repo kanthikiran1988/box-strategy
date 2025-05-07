@@ -27,7 +27,7 @@
         "max_count": 3,
         "max_days": 30,
         "min_days": 1,
-        "process_in_parallel": false
+        "process_in_parallel": true
     },
     "fees": {
         "brokerage_percentage": 0.03,
@@ -43,8 +43,8 @@
         "pipeline": {
             "process_expiries_sequentially": true,
             "delay_between_expiries_ms": 1000,
-            "batch_size": 3,
-            "delay_between_batches_ms": 4000
+            "batch_size": 50,
+            "delay_between_batches_ms": 2000
         }
     },
     "paper_trading": {
@@ -71,7 +71,7 @@
     },
     "system": {
         "log_level": "DEBUG",
-        "num_threads": 8
+        "num_threads": 16
     },
     "test": {
         "exchange": "NFO",

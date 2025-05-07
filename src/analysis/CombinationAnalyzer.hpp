@@ -104,6 +104,20 @@ public:
         const std::vector<double>& strikes);
     
     /**
+     * @brief Generate all possible strike combinations for box spreads in parallel
+     * @param underlying Underlying instrument
+     * @param exchange Exchange
+     * @param expiry Expiry date
+     * @param strikes Vector of available strike prices
+     * @return Vector of strike price pairs
+     */
+    std::vector<std::pair<double, double>> generateStrikeCombinationsParallel(
+        const std::string& underlying, 
+        const std::string& exchange,
+        const std::chrono::system_clock::time_point& expiry,
+        const std::vector<double>& strikes);
+    
+    /**
      * @brief Analyze a box spread for profitability
      * @param boxSpread Box spread to analyze
      * @return Analyzed box spread with profitability metrics
