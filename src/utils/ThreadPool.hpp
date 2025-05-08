@@ -14,6 +14,8 @@
 #include <future>
 #include <memory>
 #include <atomic>
+#include <type_traits>
+#include <algorithm>  // For std::remove_if
 #include "../utils/Logger.hpp"
 
 namespace BoxStrategy {
@@ -46,6 +48,12 @@ public:
         -> std::future<typename std::result_of<F(Args...)>::type>;
     
     /**
+     * @brief Resize the thread pool
+     * @param numThreads New number of worker threads
+     */
+    void resize(size_t numThreads);
+    
+    /**
      * @brief Get the number of worker threads
      * @return Number of worker threads
      */
@@ -67,6 +75,27 @@ public:
      * @brief Wait for all tasks to complete
      */
     void waitForCompletion();
+    
+    /**
+     * @brief Get the optimal number of threads for computation tasks
+     * @param factor Adjustment factor (0.0-1.0) to control thread usage percentage
+     * @return Optimal number of threads
+     */
+    static size_t getOptimalThreadCount(float factor = 0.75f) {
+        // Get the number of hardware threads available
+        unsigned int hwThreads = std::thread::hardware_concurrency();
+        
+        // If we can't determine the hardware threads, use a reasonable default
+        if (hwThreads == 0) {
+            hwThreads = 4;
+        }
+        
+        // Apply the factor to avoid using 100% of CPU resources
+        size_t optimalThreads = static_cast<size_t>(hwThreads * factor);
+        
+        // Ensure we have at least 1 thread
+        return std::max<size_t>(1, optimalThreads);
+    }
 
 private:
     /**
@@ -77,12 +106,13 @@ private:
     std::vector<std::thread> m_workers;           ///< Worker threads
     std::queue<std::function<void()>> m_tasks;    ///< Task queue
     
-    mutable std::mutex m_queueMutex;                      ///< Mutex for task queue
+    mutable std::mutex m_queueMutex;              ///< Mutex for task queue
     std::condition_variable m_condition;          ///< Condition variable for task queue
     std::condition_variable m_completionCondition;///< Condition variable for completion
     
     std::atomic<bool> m_stop;                     ///< Whether to stop the thread pool
     std::atomic<size_t> m_activeTaskCount;        ///< Number of active tasks
+    std::atomic<size_t> m_threadsToStop{0};       ///< Counter for threads that should exit during resizing
     
     std::shared_ptr<Logger> m_logger;             ///< Logger instance
 };

@@ -33,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/box_strategy.dir/src/utils/Logger.cpp.o.d"
   "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o"
   "CMakeFiles/box_strategy.dir/src/utils/ThreadPool.cpp.o.d"
+  "CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o"
+  "CMakeFiles/box_strategy.dir/src/utils/ThreadPoolOptimizer.cpp.o.d"
   "box_strategy"
   "box_strategy.pdb"
 )

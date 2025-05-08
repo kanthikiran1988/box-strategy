@@ -44,6 +44,7 @@ set(SOURCES
     src/utils/Logger.cpp
     src/utils/HttpClient.cpp
     src/utils/ThreadPool.cpp
+    src/utils/ThreadPoolOptimizer.cpp
     src/models/InstrumentModel.cpp
     src/models/OrderModel.cpp
     src/models/BoxSpreadModel.cpp

@@ -67,7 +67,8 @@
         "paper_trading": true,
         "quantity": 1,
         "scan_interval_seconds": 60,
-        "underlying": "NIFTY"
+        "underlying": "NIFTY",
+        "use_average_margin": true
     },
     "system": {
         "log_level": "DEBUG",

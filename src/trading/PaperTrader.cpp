@@ -1,4 +1,4 @@
- /**
+/**
  * @file PaperTrader.cpp
  * @brief Implementation of the PaperTrader class
  */
@@ -8,6 +8,9 @@
 #include <random>
 #include <sstream>
 #include <iomanip>
+#include <fstream>
+#include <iostream>
+#include <filesystem>
 
 namespace BoxStrategy {
 
@@ -308,6 +311,187 @@ double PaperTrader::calculateFees(const OrderModel& order) const {
     double totalFees = brokerage + stt + exchangeCharges + gst + sebiCharges + stampDuty;
     
     return totalFees;
+}
+
+// Implementation of the new CSV export methods
+
+std::string PaperTrader::generateDefaultFilename(const std::string& prefix) const {
+    // Generate a filename based on current date and time
+    auto now = std::chrono::system_clock::now();
+    auto now_c = std::chrono::system_clock::to_time_t(now);
+    
+    std::stringstream ss;
+    ss << prefix << "_" << std::put_time(std::localtime(&now_c), "%Y%m%d_%H%M%S") << ".csv";
+    
+    return ss.str();
+}
+
+bool PaperTrader::writeTradesToCSV(const std::vector<PaperTradeResult>& results, const std::string& filename) const {
+    if (results.empty()) {
+        m_logger->warn("No trade results to export to CSV");
+        return false;
+    }
+    
+    try {
+        std::ofstream file(filename);
+        if (!file.is_open()) {
+            m_logger->error("Failed to open CSV file for writing: {}", filename);
+            return false;
+        }
+        
+        // Write CSV header
+        file << "ID,Symbol,Exchange,TransactionType,Quantity,ExecutionPrice,Slippage,Fees,Profit,ExecutionTime,IsBox,BoxID\n";
+        
+        // Write data rows
+        for (const auto& result : results) {
+            // Format execution time
+            auto execution_time_t = std::chrono::system_clock::to_time_t(result.executionTime);
+            std::stringstream time_ss;
+            time_ss << std::put_time(std::localtime(&execution_time_t), "%Y-%m-%d %H:%M:%S");
+            
+            // Format transaction type
+            std::string transType = (result.transactionType == TransactionType::BUY) ? "BUY" : "SELL";
+            
+            // Write the row
+            file << result.id << ","
+                 << result.symbol << ","
+                 << result.exchange << ","
+                 << transType << ","
+                 << result.quantity << ","
+                 << result.executionPrice << ","
+                 << result.slippage << ","
+                 << result.fees << ","
+                 << result.profit << ","
+                 << time_ss.str() << ","
+                 << (result.isBox ? "TRUE" : "FALSE") << ","
+                 << result.boxId << "\n";
+        }
+        
+        file.close();
+        m_logger->info("Successfully exported {} trade results to {}", results.size(), filename);
+        return true;
+        
+    } catch (const std::exception& e) {
+        m_logger->error("Error exporting trade results to CSV: {}", e.what());
+        return false;
+    }
+}
+
+bool PaperTrader::exportTradesToCSV(const std::string& filename) const {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    
+    // Generate a default filename if none provided
+    std::string actualFilename = !filename.empty() ? filename : generateDefaultFilename("paper_trades");
+    
+    return writeTradesToCSV(m_tradeResults, actualFilename);
+}
+
+bool PaperTrader::exportBoxTradesToCSV(const std::string& boxId, const std::string& filename) const {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    
+    // Filter results for the specified box spread
+    std::vector<PaperTradeResult> boxResults;
+    for (const auto& result : m_tradeResults) {
+        if (result.isBox && result.boxId == boxId) {
+            boxResults.push_back(result);
+        }
+    }
+    
+    if (boxResults.empty()) {
+        m_logger->warn("No trade results found for box ID: {}", boxId);
+        return false;
+    }
+    
+    // Generate a default filename if none provided
+    std::string actualFilename = !filename.empty() ? filename : generateDefaultFilename("box_trades_" + boxId);
+    
+    return writeTradesToCSV(boxResults, actualFilename);
+}
+
+bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>& spreads, const std::string& filename) const {
+    if (spreads.empty()) {
+        m_logger->warn("No profitable spreads to export to CSV");
+        return false;
+    }
+    
+    try {
+        // Generate a default filename if none provided
+        std::string actualFilename = !filename.empty() ? filename : generateDefaultFilename("profitable_spreads");
+        
+        std::ofstream file(actualFilename);
+        if (!file.is_open()) {
+            m_logger->error("Failed to open CSV file for writing: {}", actualFilename);
+            return false;
+        }
+        
+        // Check if we're using average margin
+        bool usingAverageMargin = m_configManager->getBoolValue("strategy/use_average_margin", false);
+        
+        // Write CSV header
+        file << "ID,Underlying,Exchange,LowerStrike,HigherStrike,Expiry,"
+             << "TheoreticalValue,NetPremium,ProfitLoss,ROI,Profitability,"
+             << "Slippage,Fees,Margin";
+        
+        // Add original margin column if using average margin
+        if (usingAverageMargin) {
+            file << ",OriginalMargin";
+        }
+        
+        file << ","
+             << "LongCallLower,ShortCallHigher,LongPutHigher,ShortPutLower,"
+             << "CallLowerLTP,CallHigherLTP,PutHigherLTP,PutLowerLTP\n";
+        
+        // Write data rows
+        for (const auto& spread : spreads) {
+            // Format expiry
+            auto expiry_t = std::chrono::system_clock::to_time_t(spread.expiry);
+            std::stringstream expiry_ss;
+            expiry_ss << std::put_time(std::localtime(&expiry_t), "%Y-%m-%d");
+            
+            double theoreticalValue = spread.calculateTheoreticalValue();
+            double netPremium = spread.calculateNetPremium();
+            double profitLoss = spread.calculateProfitLoss();
+            
+            // Write the row
+            file << spread.id << ","
+                 << spread.underlying << ","
+                 << spread.exchange << ","
+                 << spread.strikePrices[0] << ","
+                 << spread.strikePrices[1] << ","
+                 << expiry_ss.str() << ","
+                 << theoreticalValue << ","
+                 << netPremium << ","
+                 << profitLoss << ","
+                 << spread.roi << ","
+                 << spread.profitability << ","
+                 << spread.slippage << ","
+                 << spread.fees << ","
+                 << spread.margin;
+            
+            // Add original margin if using average margin
+            if (usingAverageMargin) {
+                file << "," << spread.originalMargin;
+            }
+            
+            file << ","
+                 << spread.longCallLower.tradingSymbol << ","
+                 << spread.shortCallHigher.tradingSymbol << ","
+                 << spread.longPutHigher.tradingSymbol << ","
+                 << spread.shortPutLower.tradingSymbol << ","
+                 << spread.longCallLower.lastPrice << ","
+                 << spread.shortCallHigher.lastPrice << ","
+                 << spread.longPutHigher.lastPrice << ","
+                 << spread.shortPutLower.lastPrice << "\n";
+        }
+        
+        file.close();
+        m_logger->info("Successfully exported {} profitable spreads to {}", spreads.size(), actualFilename);
+        return true;
+        
+    } catch (const std::exception& e) {
+        m_logger->error("Error exporting profitable spreads to CSV: {}", e.what());
+        return false;
+    }
 }
 
 }  // namespace BoxStrategy
