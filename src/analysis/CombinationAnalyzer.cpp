@@ -15,6 +15,7 @@
 #include <thread>
 #include <atomic>
 #include <queue>
+#include <functional>
 
 namespace BoxStrategy {
 
@@ -139,12 +140,20 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     }
     
     // Generate all possible strike combinations using parallel implementation
-    auto combinations = generateStrikeCombinationsParallel(underlying, exchange, expiry, strikes);
+    std::vector<std::pair<double, double>> combinations = generateStrikeCombinationsParallel(underlying, exchange, expiry, strikes);
     m_logger->info("Generated {} strike combinations", combinations.size());
     
     // Configure batch processing 
     size_t batchSize = m_configManager->getIntValue("option_chain/pipeline/batch_size", 50);
     int delayBetweenBatchesMs = m_configManager->getIntValue("option_chain/pipeline/delay_between_batches_ms", 2000);
+    
+    // Optimize thread pool size based on workload
+    size_t maxThreads = std::min<size_t>(
+        m_threadPool->getNumThreads() * 2,  // Use double the current threads as maximum
+        combinations.size()                 // But no more than number of combinations
+    );
+    // Resize thread pool to match workload
+    m_threadPool->resize(maxThreads);
     
     // Process in smaller batches to avoid rate limits
     std::vector<BoxSpreadModel> allSpreads;
@@ -285,10 +294,13 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     std::atomic<size_t> completedCombinations(0);
     size_t totalCombinations = combinations.size();
     
-    // To control the number of submitted jobs
-    std::atomic<size_t> activeJobs(0);
-    std::mutex activeJobsMutex;
-    std::condition_variable activeJobsCV;
+    // We'll use this to track the progress of all the parallel tasks
+    std::atomic<size_t> processedItems(0);
+    auto startTime = std::chrono::high_resolution_clock::now();
+    
+    // Variables for progress tracking
+    std::function<void()> stopProgressMonitoring = [](){}; // Default no-op
+    std::atomic<bool> progressTimerRunning(true);
     
     // For results collection
     std::vector<BoxSpreadModel> validSpreads;
@@ -296,33 +308,44 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     
     // Process combinations in parallel with adaptive batch sizes
     m_logger->info("Processing {} combinations with up to {} concurrent jobs", 
-                 totalCombinations, maxConcurrentJobs);
+                 totalCombinations, maxThreads);
     
-    // Create a progress tracking timer
-    auto startTime = std::chrono::high_resolution_clock::now();
-    auto lastProgressTime = startTime;
-    std::atomic<bool> progressTimerRunning(true);
-    
-    // Start a progress reporting thread
-    std::thread progressThread([&]() {
-        while (progressTimerRunning.load()) {
-            std::this_thread::sleep_for(std::chrono::seconds(5));
-            
-            auto now = std::chrono::high_resolution_clock::now();
-            auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - startTime).count();
-            auto completed = completedCombinations.load();
-            
-            if (completed > 0 && totalCombinations > 0) {
-                double percentComplete = (double)completed / totalCombinations * 100.0;
-                double itemsPerSecond = (double)completed / std::max(1.0, (double)elapsed);
-                double estimatedSecondsRemaining = (totalCombinations - completed) / std::max(0.1, itemsPerSecond);
+    // If we have the thread pool optimizer, use it for progress monitoring
+    if (m_threadPoolOptimizer) {
+        stopProgressMonitoring = m_threadPoolOptimizer->monitorProgress(
+            totalCombinations, 
+            processedItems, 
+            5.0, 
+            "Processing combinations"
+        );
+    } else {
+        // Original progress reporting code
+        auto lastProgressTime = startTime;
+        
+        // Start a progress reporting thread
+        std::thread progressThread([&]() {
+            while (progressTimerRunning.load()) {
+                std::this_thread::sleep_for(std::chrono::seconds(5));
                 
-                m_logger->info("Progress: {:.1f}% ({}/{}) - {:.1f} combinations/sec - Est. remaining: {:.0f} sec", 
-                             percentComplete, completed, totalCombinations, 
-                             itemsPerSecond, estimatedSecondsRemaining);
+                auto now = std::chrono::high_resolution_clock::now();
+                auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - startTime).count();
+                auto completed = completedCombinations.load();
+                
+                if (completed > 0 && totalCombinations > 0) {
+                    double percentComplete = (double)completed / totalCombinations * 100.0;
+                    double itemsPerSecond = (double)completed / std::max(1.0, (double)elapsed);
+                    double estimatedSecondsRemaining = (totalCombinations - completed) / std::max(0.1, itemsPerSecond);
+                    
+                    m_logger->info("Progress: {:.1f}% ({}/{}) - {:.1f} combinations/sec - Est. remaining: {:.0f} sec", 
+                                 percentComplete, completed, totalCombinations, 
+                                 itemsPerSecond, estimatedSecondsRemaining);
+                }
             }
-        }
-    });
+        });
+        
+        // Detach the thread so it runs independently
+        progressThread.detach();
+    }
     
     // Create a work queue for all combinations
     std::queue<std::pair<double, double>> workQueue;
@@ -397,7 +420,22 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
             }
             
             // Update completed count
+            size_t processed = processedItems.fetch_add(1) + 1;
             completedCombinations++;
+            
+            // Log progress every 512 items for efficiency
+            if ((processed & 0x1FF) == 0) {  // Log every 512 items (0x1FF = 511 in binary)
+                auto now = std::chrono::high_resolution_clock::now();
+                auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - startTime).count();
+                if (elapsed > 0) {
+                    double itemsPerSecond = (double)processed / elapsed;
+                    double percentComplete = (double)processed / totalCombinations * 100.0;
+                    
+                    m_logger->debug("Progress: {:.1f}% ({}/{}) - {:.1f} items/sec", 
+                                 percentComplete, processed, totalCombinations,
+                                 itemsPerSecond);
+                }
+            }
         }
         
         // Add results to the main result vector
@@ -442,10 +480,13 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
         }
     }
     
-    // Stop the progress thread
-    progressTimerRunning.store(false);
-    if (progressThread.joinable()) {
-        progressThread.join();
+    // Stop progress monitoring
+    if (m_threadPoolOptimizer) {
+        stopProgressMonitoring();
+    } else {
+        // Stop the original progress thread
+        progressTimerRunning.store(false);
+        // We detached the thread, so we don't need to join it
     }
     
     // Log final statistics

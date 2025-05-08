@@ -15,6 +15,7 @@
 #include <memory>
 #include <atomic>
 #include <type_traits>
+#include <algorithm>  // For std::remove_if
 #include "../utils/Logger.hpp"
 
 namespace BoxStrategy {
@@ -45,6 +46,12 @@ public:
     template<class F, class... Args>
     auto enqueue(F&& f, Args&&... args) 
         -> std::future<typename std::result_of<F(Args...)>::type>;
+    
+    /**
+     * @brief Resize the thread pool
+     * @param numThreads New number of worker threads
+     */
+    void resize(size_t numThreads);
     
     /**
      * @brief Get the number of worker threads
@@ -105,6 +112,7 @@ private:
     
     std::atomic<bool> m_stop;                     ///< Whether to stop the thread pool
     std::atomic<size_t> m_activeTaskCount;        ///< Number of active tasks
+    std::atomic<size_t> m_threadsToStop{0};       ///< Counter for threads that should exit during resizing
     
     std::shared_ptr<Logger> m_logger;             ///< Logger instance
 };
