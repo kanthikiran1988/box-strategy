@@ -695,8 +695,20 @@ BoxSpreadModel CombinationAnalyzer::analyzeBoxSpread(BoxSpreadModel boxSpread) {
     // Use the depth-based net premium
     boxSpread.netPremium = netPremiumWithDepth;
     
-    // Calculate profit/loss
-    double profitLoss = boxSpread.calculateTheoreticalValue() - boxSpread.netPremium;
+    // Calculate profit/loss correctly based on the sign of net premium
+    // For box spreads:
+    // - If net premium is negative (we pay premium), profit = theoretical value + net premium
+    // - If net premium is positive (we receive premium), profit = theoretical value - net premium
+    double profitLoss;
+    if (boxSpread.netPremium < 0) {
+        profitLoss = boxSpread.calculateTheoreticalValue() + boxSpread.netPremium;
+        m_logger->debug("Box spread net premium is negative (we pay): TheoreticalValue={} + NetPremium={} = ProfitLoss={}",
+                     boxSpread.calculateTheoreticalValue(), boxSpread.netPremium, profitLoss);
+    } else {
+        profitLoss = boxSpread.calculateTheoreticalValue() - boxSpread.netPremium;
+        m_logger->debug("Box spread net premium is positive (we receive): TheoreticalValue={} - NetPremium={} = ProfitLoss={}",
+                     boxSpread.calculateTheoreticalValue(), boxSpread.netPremium, profitLoss);
+    }
     
     // Calculate slippage - no additional slippage as we're already using executable prices
     boxSpread.slippage = 0.0;

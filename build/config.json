@@ -24,8 +24,8 @@
     "expiry": {
         "include_monthly": true,
         "include_weekly": true,
-        "max_count": 3,
-        "max_days": 30,
+        "max_count": 7,
+        "max_days": 90,
         "min_days": 0,
         "process_in_parallel": true
     },

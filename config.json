@@ -25,8 +25,8 @@
         "include_monthly": true,
         "include_weekly": true,
         "max_count": 3,
-        "max_days": 30,
-        "min_days": 1,
+        "max_days": 90,
+        "min_days": 30,
         "process_in_parallel": true
     },
     "fees": {

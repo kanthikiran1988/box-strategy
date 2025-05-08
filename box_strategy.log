@@ -92,3 +92,23 @@
 2025-05-07 09:11:26 [INFO] Found a total of 0 profitable spreads
 2025-05-07 09:11:26 [INFO] No profitable box spreads found. Waiting for next scan...
 2025-05-07 09:11:26 [INFO] Waiting 60 seconds for next scan
+2025-05-08 11:58:28 [INFO] Logger initialized. Session started.
+2025-05-08 11:58:28 [INFO] Starting Box Strategy HFT application
+2025-05-08 11:58:28 [INFO] ConfigManager initialized with config file: config.json
+2025-05-08 11:58:28 [INFO] Configuration loaded successfully from config.json
+2025-05-08 11:58:28 [INFO] Configuration loaded. Underlying: NIFTY, Exchange: NFO, Quantity: 1
+2025-05-08 11:58:28 [INFO] Initializing thread pool with 16 threads
+2025-05-08 11:58:28 [INFO] Thread pool initialized with 16 threads
+2025-05-08 11:58:28 [INFO] HttpClient initialized
+2025-05-08 11:58:28 [INFO] Initializing AuthManager
+2025-05-08 11:58:28 [INFO] API credentials loaded from configuration
+2025-05-08 11:58:28 [INFO] Authentication details loaded from configuration
+2025-05-08 11:58:28 [INFO] Access token is not valid. Please authenticate.
+2025-05-08 11:58:28 [INFO] Generated login URL: https://kite.zerodha.com/connect/login?api_key=6vhmpqt5hv49r01o&v=3
+2025-05-08 11:58:55 [INFO] Generating access token with request token: q
+2025-05-08 11:58:55 [ERROR] Failed to generate access token. Status code: 400, Response: {"status":"error","message":"`request_token` should be minimum 10 characters in length.","data":null,"error_type":"InputException"}
+2025-05-08 11:58:55 [FATAL] Failed to generate access token
+2025-05-08 11:58:55 [INFO] HttpClient cleaned up
+2025-05-08 11:58:55 [INFO] Shutting down thread pool
+2025-05-08 11:58:55 [INFO] Thread pool shutdown complete
+2025-05-08 11:58:55 [INFO] Session ended.

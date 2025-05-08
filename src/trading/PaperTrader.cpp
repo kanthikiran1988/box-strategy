@@ -426,7 +426,7 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
         
         // Check if we're using average margin
         bool usingAverageMargin = m_configManager->getBoolValue("strategy/use_average_margin", false);
-        double quantity = m_configManager->getIntValue("strategy/quantity", 1);
+        uint64_t quantity = m_configManager->getIntValue("strategy/quantity", 1);
         double depthMultiplier = m_configManager->getDoubleValue("strategy/depth_multiplier", 2.0);
         
         // Write CSV header
@@ -442,7 +442,8 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
         file << ","
              << "LongCallLower,ShortCallHigher,LongPutHigher,ShortPutLower,"
              << "SufficientDepth,"
-             << "CallLowerLTP,CallHigherLTP,PutHigherLTP,PutLowerLTP\n";
+             << "CallLowerLTP,CallHigherLTP,PutHigherLTP,PutLowerLTP,"
+             << "CallLowerExecutablePrice,CallHigherExecutablePrice,PutHigherExecutablePrice,PutLowerExecutablePrice\n";
         
         // Write data rows
         for (const auto& spread : spreads) {
@@ -456,6 +457,12 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
             double depthNetPremium = spread.calculateNetPremiumWithDepth(quantity, depthMultiplier);
             bool hasSufficientDepth = spread.hasSufficientDepth(quantity, depthMultiplier);
             double profitLoss = theoreticalValue - spread.netPremium;
+            
+            // Calculate executable prices from market depth
+            double callLowerExecutable = BoxSpreadModel::calculateWeightedPrice(true, quantity, spread.longCallLower, depthMultiplier);
+            double callHigherExecutable = BoxSpreadModel::calculateWeightedPrice(false, quantity, spread.shortCallHigher, depthMultiplier);
+            double putHigherExecutable = BoxSpreadModel::calculateWeightedPrice(true, quantity, spread.longPutHigher, depthMultiplier);
+            double putLowerExecutable = BoxSpreadModel::calculateWeightedPrice(false, quantity, spread.shortPutLower, depthMultiplier);
             
             // Write the row
             file << spread.id << ","
@@ -487,7 +494,13 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
                  << spread.longCallLower.lastPrice << ","
                  << spread.shortCallHigher.lastPrice << ","
                  << spread.longPutHigher.lastPrice << ","
-                 << spread.shortPutLower.lastPrice << "\n";
+                 << spread.shortPutLower.lastPrice << ","
+                 << (std::isnan(callLowerExecutable) ? "INSUFFICIENT" : std::to_string(callLowerExecutable)) << ","
+                 << (std::isnan(callHigherExecutable) ? "INSUFFICIENT" : std::to_string(callHigherExecutable)) << ","
+                 << (std::isnan(putHigherExecutable) ? "INSUFFICIENT" : std::to_string(putHigherExecutable)) << ","
+                 << (std::isnan(putLowerExecutable) ? "INSUFFICIENT" : std::to_string(putLowerExecutable));
+            
+            file << "\n";
         }
         
         file.close();
