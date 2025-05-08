@@ -668,6 +668,7 @@ BoxSpreadModel CombinationAnalyzer::analyzeBoxSpread(BoxSpreadModel boxSpread) {
     uint64_t quantity = m_configManager->getIntValue("strategy/quantity", 1);
     double capital = m_configManager->getDoubleValue("strategy/capital", 75000.0);
     double minProfitPercentage = m_configManager->getDoubleValue("strategy/min_profit_percentage", 0.5);
+    bool useAverageMargin = m_configManager->getBoolValue("strategy/use_average_margin", false);
     
     // Calculate theoretical value
     boxSpread.maxProfit = boxSpread.calculateTheoreticalValue();
@@ -691,7 +692,16 @@ BoxSpreadModel CombinationAnalyzer::analyzeBoxSpread(BoxSpreadModel boxSpread) {
     double adjustedProfitLoss = profitLoss - boxSpread.slippage - boxSpread.fees;
     
     // Calculate ROI
-    if (boxSpread.margin > 0) {
+    if (useAverageMargin) {
+        // Use capital value as average margin for standardized ROI calculation
+        boxSpread.roi = (adjustedProfitLoss / capital) * 100.0;
+        
+        // Store original margin calculation for reference
+        boxSpread.originalMargin = boxSpread.margin;
+        boxSpread.margin = capital;
+        
+        m_logger->debug("Using average margin (capital) for ROI calculation: {}", capital);
+    } else if (boxSpread.margin > 0) {
         boxSpread.roi = (adjustedProfitLoss / boxSpread.margin) * 100.0;
     } else {
         boxSpread.roi = 0.0;

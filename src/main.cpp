@@ -266,6 +266,14 @@ int main(int argc, char* argv[]) {
                     boxSpreads = marketDepthAnalyzer->filterByLiquidity(boxSpreads, quantity);
                     logger->info("{} box spreads have sufficient liquidity", boxSpreads.size());
                     
+                    // Export profitable spreads to CSV if paper trading is enabled
+                    if (isPaperTrading && !boxSpreads.empty()) {
+                        std::string filename = "profitable_spreads_" + 
+                            std::to_string(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now())) + ".csv";
+                        paperTrader->exportProfitableSpreadsToCsv(boxSpreads, filename);
+                        logger->info("Exported profitable spreads to {}", filename);
+                    }
+                    
                     if (!boxSpreads.empty()) {
                         // Get the most profitable box spread
                         BoxSpreadModel bestBoxSpread = boxSpreads[0];
@@ -282,6 +290,10 @@ int main(int argc, char* argv[]) {
                             logger->info("Simulating box spread trade (paper trading mode)");
                             PaperTradeResult result = paperTrader->simulateBoxSpreadTrade(bestBoxSpread, quantity);
                             logger->info("Paper trade result: ID: {}, Profit: {}", result.id, result.profit);
+                            
+                            // Export trade results after each trade
+                            paperTrader->exportTradesToCSV();
+                            logger->info("Exported updated trade results to CSV");
                         } else {
                             logger->info("Executing box spread trade (live trading mode)");
                             bool orderPlaced = orderManager->placeBoxSpreadOrder(bestBoxSpread, quantity);
@@ -323,6 +335,12 @@ int main(int argc, char* argv[]) {
         if (isPaperTrading) {
             double totalProfit = paperTrader->getTotalProfitLoss();
             logger->info("Paper trading total profit/loss: {}", totalProfit);
+            
+            // Export final trade results to CSV
+            std::string finalExportFilename = "final_paper_trades_" + 
+                std::to_string(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now())) + ".csv";
+            paperTrader->exportTradesToCSV(finalExportFilename);
+            logger->info("Exported final paper trade results to {}", finalExportFilename);
         }
         
         logger->info("Box Strategy HFT application shutting down");

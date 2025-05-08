@@ -1,4 +1,4 @@
- /**
+/**
  * @file BoxSpreadModel.hpp
  * @brief Model for box spread strategy
  */
@@ -50,6 +50,7 @@ struct BoxSpreadModel {
     double slippage;                     ///< Estimated slippage
     double fees;                         ///< Total fees (brokerage, STT, GST, etc.)
     double margin;                       ///< Margin required
+    double originalMargin;               ///< Original margin calculation when using average margin
     double roi;                          ///< Return on investment
     
     bool allLegsExecuted;                ///< Whether all legs have been executed

@@ -106,6 +106,29 @@ public:
      * @brief Clear all paper trade results
      */
     void clearResults();
+    
+    /**
+     * @brief Export all paper trade results to a CSV file
+     * @param filename Optional filename (if empty, a default name will be generated)
+     * @return True if the export was successful, false otherwise
+     */
+    bool exportTradesToCSV(const std::string& filename = "") const;
+    
+    /**
+     * @brief Export paper trade results for a specific box spread to a CSV file
+     * @param boxId Box spread ID
+     * @param filename Optional filename (if empty, a default name will be generated)
+     * @return True if the export was successful, false otherwise
+     */
+    bool exportBoxTradesToCSV(const std::string& boxId, const std::string& filename = "") const;
+    
+    /**
+     * @brief Export profitable spreads to a CSV file
+     * @param spreads Vector of box spread models
+     * @param filename Optional filename (if empty, a default name will be generated)
+     * @return True if the export was successful, false otherwise
+     */
+    bool exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>& spreads, const std::string& filename = "") const;
 
 private:
     std::shared_ptr<ConfigManager> m_configManager;        ///< Configuration manager
@@ -135,6 +158,21 @@ private:
      * @return Estimated fees
      */
     double calculateFees(const OrderModel& order) const;
+    
+    /**
+     * @brief Generate a default filename for trade exports
+     * @param prefix Prefix for the filename
+     * @return Generated filename
+     */
+    std::string generateDefaultFilename(const std::string& prefix) const;
+    
+    /**
+     * @brief Write trade results to a CSV file
+     * @param results Vector of paper trade results
+     * @param filename Filename to write to
+     * @return True if successful, false otherwise
+     */
+    bool writeTradesToCSV(const std::vector<PaperTradeResult>& results, const std::string& filename) const;
 };
 
 }  // namespace BoxStrategy

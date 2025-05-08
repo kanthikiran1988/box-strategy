@@ -19,6 +19,7 @@ BoxSpreadModel::BoxSpreadModel()
       slippage(0.0),
       fees(0.0),
       margin(0.0),
+      originalMargin(0.0),
       roi(0.0),
       allLegsExecuted(false) {
     
@@ -40,6 +41,7 @@ BoxSpreadModel::BoxSpreadModel(const std::string& underlying, const std::string&
       slippage(0.0),
       fees(0.0),
       margin(0.0),
+      originalMargin(0.0),
       roi(0.0),
       allLegsExecuted(false) {
     
