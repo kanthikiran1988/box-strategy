@@ -667,20 +667,39 @@ BoxSpreadModel CombinationAnalyzer::analyzeBoxSpread(BoxSpreadModel boxSpread) {
     // Get configuration
     uint64_t quantity = m_configManager->getIntValue("strategy/quantity", 1);
     double capital = m_configManager->getDoubleValue("strategy/capital", 75000.0);
-    double minProfitPercentage = m_configManager->getDoubleValue("strategy/min_profit_percentage", 0.5);
+    double depthMultiplier = m_configManager->getDoubleValue("strategy/depth_multiplier", 2.0);
     bool useAverageMargin = m_configManager->getBoolValue("strategy/use_average_margin", false);
+    
+    // Check if all legs have sufficient depth at 2x quantity
+    if (!boxSpread.hasSufficientDepth(quantity, depthMultiplier)) {
+        m_logger->info("Box spread lacks sufficient market depth ({:.1f}x): {}", 
+                     depthMultiplier, boxSpread.id);
+        // Return the box spread with zero profitability to indicate it's not tradable
+        boxSpread.profitability = -1.0;
+        return boxSpread;
+    }
     
     // Calculate theoretical value
     boxSpread.maxProfit = boxSpread.calculateTheoreticalValue();
     
-    // Calculate net premium
-    boxSpread.netPremium = boxSpread.calculateNetPremium();
+    // Calculate net premium using market depth prices
+    double netPremiumWithDepth = boxSpread.calculateNetPremiumWithDepth(quantity, depthMultiplier);
+    
+    // Store the original LTP-based net premium for comparison
+    double ltpNetPremium = boxSpread.calculateNetPremium();
+    
+    // Log the difference between depth-based and LTP-based net premium
+    m_logger->debug("Net premium: depth-based={:.2f}, LTP-based={:.2f}, diff={:.2f}", 
+                  netPremiumWithDepth, ltpNetPremium, netPremiumWithDepth - ltpNetPremium);
+    
+    // Use the depth-based net premium
+    boxSpread.netPremium = netPremiumWithDepth;
     
     // Calculate profit/loss
-    double profitLoss = boxSpread.calculateProfitLoss();
+    double profitLoss = boxSpread.calculateTheoreticalValue() - boxSpread.netPremium;
     
-    // Calculate slippage
-    boxSpread.slippage = boxSpread.calculateSlippage(quantity);
+    // Calculate slippage - no additional slippage as we're already using executable prices
+    boxSpread.slippage = 0.0;
     
     // Calculate fees
     boxSpread.fees = boxSpread.calculateFees(quantity);
@@ -689,7 +708,7 @@ BoxSpreadModel CombinationAnalyzer::analyzeBoxSpread(BoxSpreadModel boxSpread) {
     boxSpread.margin = m_riskCalculator->calculateMarginRequired(boxSpread, quantity);
     
     // Calculate adjusted profit/loss
-    double adjustedProfitLoss = profitLoss - boxSpread.slippage - boxSpread.fees;
+    double adjustedProfitLoss = profitLoss - boxSpread.fees;
     
     // Calculate ROI
     if (useAverageMargin) {
@@ -711,8 +730,8 @@ BoxSpreadModel CombinationAnalyzer::analyzeBoxSpread(BoxSpreadModel boxSpread) {
     // Higher ROI and higher absolute profit both contribute to a higher score
     boxSpread.profitability = boxSpread.roi * std::log(1.0 + std::abs(adjustedProfitLoss));
     
-    m_logger->debug("Box spread analysis: ROI={}%, ProfitLoss={}, Slippage={}, Fees={}, Margin={}",
-                  boxSpread.roi, profitLoss, boxSpread.slippage, boxSpread.fees, boxSpread.margin);
+    m_logger->debug("Box spread analysis: ROI={}%, ProfitLoss={}, Fees={}, Margin={}, Using market depth prices",
+                  boxSpread.roi, profitLoss, boxSpread.fees, boxSpread.margin);
     
     return boxSpread;
 }

@@ -128,6 +128,35 @@ struct BoxSpreadModel {
      * @return Total fees
      */
     double calculateFees(uint64_t quantity) const;
+    
+    /**
+     * @brief Calculate weighted average price from market depth
+     * @param isBuyOrder Whether this is a buy order (true) or sell order (false)
+     * @param requiredQuantity The quantity needed
+     * @param instrument The instrument to check depth for
+     * @param depthMultiplier Multiplier for required depth
+     * @return Weighted average price or NaN if insufficient depth
+     */
+    static double calculateWeightedPrice(bool isBuyOrder, 
+                                       uint64_t requiredQuantity,
+                                       const InstrumentModel& instrument,
+                                       double depthMultiplier);
+    
+    /**
+     * @brief Calculate the net premium using market depth prices
+     * @param quantity Quantity to trade
+     * @param depthMultiplier Multiplier for required depth
+     * @return Net premium or NaN if insufficient depth
+     */
+    double calculateNetPremiumWithDepth(uint64_t quantity, double depthMultiplier) const;
+    
+    /**
+     * @brief Check if all legs have sufficient depth
+     * @param quantity Quantity to trade
+     * @param depthMultiplier Multiplier for required depth
+     * @return True if all legs have sufficient depth, false otherwise
+     */
+    bool hasSufficientDepth(uint64_t quantity, double depthMultiplier) const;
 };
 
 }  // namespace BoxStrategy

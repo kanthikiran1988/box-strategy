@@ -68,7 +68,8 @@
         "quantity": 1,
         "scan_interval_seconds": 60,
         "underlying": "NIFTY",
-        "use_average_margin": true
+        "use_average_margin": true,
+        "depth_multiplier": 2.0
     },
     "system": {
         "log_level": "DEBUG",

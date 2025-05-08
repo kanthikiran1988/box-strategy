@@ -426,11 +426,13 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
         
         // Check if we're using average margin
         bool usingAverageMargin = m_configManager->getBoolValue("strategy/use_average_margin", false);
+        double quantity = m_configManager->getIntValue("strategy/quantity", 1);
+        double depthMultiplier = m_configManager->getDoubleValue("strategy/depth_multiplier", 2.0);
         
         // Write CSV header
         file << "ID,Underlying,Exchange,LowerStrike,HigherStrike,Expiry,"
-             << "TheoreticalValue,NetPremium,ProfitLoss,ROI,Profitability,"
-             << "Slippage,Fees,Margin";
+             << "TheoreticalValue,DepthBasedNetPremium,LTPNetPremium,ProfitLoss,ROI,Profitability,"
+             << "Fees,Margin";
         
         // Add original margin column if using average margin
         if (usingAverageMargin) {
@@ -439,6 +441,7 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
         
         file << ","
              << "LongCallLower,ShortCallHigher,LongPutHigher,ShortPutLower,"
+             << "SufficientDepth,"
              << "CallLowerLTP,CallHigherLTP,PutHigherLTP,PutLowerLTP\n";
         
         // Write data rows
@@ -449,8 +452,10 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
             expiry_ss << std::put_time(std::localtime(&expiry_t), "%Y-%m-%d");
             
             double theoreticalValue = spread.calculateTheoreticalValue();
-            double netPremium = spread.calculateNetPremium();
-            double profitLoss = spread.calculateProfitLoss();
+            double ltpNetPremium = spread.calculateNetPremium();
+            double depthNetPremium = spread.calculateNetPremiumWithDepth(quantity, depthMultiplier);
+            bool hasSufficientDepth = spread.hasSufficientDepth(quantity, depthMultiplier);
+            double profitLoss = theoreticalValue - spread.netPremium;
             
             // Write the row
             file << spread.id << ","
@@ -460,11 +465,11 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
                  << spread.strikePrices[1] << ","
                  << expiry_ss.str() << ","
                  << theoreticalValue << ","
-                 << netPremium << ","
+                 << (hasSufficientDepth ? std::to_string(depthNetPremium) : "INSUFFICIENT_DEPTH") << ","
+                 << ltpNetPremium << ","
                  << profitLoss << ","
                  << spread.roi << ","
                  << spread.profitability << ","
-                 << spread.slippage << ","
                  << spread.fees << ","
                  << spread.margin;
             
@@ -478,6 +483,7 @@ bool PaperTrader::exportProfitableSpreadsToCsv(const std::vector<BoxSpreadModel>
                  << spread.shortCallHigher.tradingSymbol << ","
                  << spread.longPutHigher.tradingSymbol << ","
                  << spread.shortPutLower.tradingSymbol << ","
+                 << (hasSufficientDepth ? "YES" : "NO") << ","
                  << spread.longCallLower.lastPrice << ","
                  << spread.shortCallHigher.lastPrice << ","
                  << spread.longPutHigher.lastPrice << ","

@@ -268,4 +268,73 @@ double BoxSpreadModel::calculateFees(uint64_t quantity) const {
     return brokerage + stt + transactionCharges + gst + sebiCharges;
 }
 
+double BoxSpreadModel::calculateWeightedPrice(bool isBuyOrder, 
+                                            uint64_t requiredQuantity,
+                                            const InstrumentModel& instrument,
+                                            double depthMultiplier) {
+    // Buy orders use the sell depth (ask prices)
+    // Sell orders use the buy depth (bid prices)
+    const auto& depth = isBuyOrder ? instrument.sellDepth : instrument.buyDepth;
+    
+    if (depth.empty()) {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+    
+    uint64_t requiredDepth = static_cast<uint64_t>(requiredQuantity * depthMultiplier);
+    uint64_t availableQuantity = 0;
+    double weightedSum = 0.0;
+    
+    // Calculate weighted price up to required depth
+    for (const auto& level : depth) {
+        uint64_t levelQuantity = std::min(level.quantity, requiredDepth - availableQuantity);
+        weightedSum += levelQuantity * level.price;
+        availableQuantity += levelQuantity;
+        
+        if (availableQuantity >= requiredDepth) {
+            break;
+        }
+    }
+    
+    // If we don't have enough depth, return NaN
+    if (availableQuantity < requiredDepth) {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+    
+    return weightedSum / availableQuantity;
+}
+
+double BoxSpreadModel::calculateNetPremiumWithDepth(uint64_t quantity, double depthMultiplier) const {
+    // Long positions are buy orders, short positions are sell orders
+    double longCallPrice = calculateWeightedPrice(true, quantity, longCallLower, depthMultiplier);
+    double shortCallPrice = calculateWeightedPrice(false, quantity, shortCallHigher, depthMultiplier);
+    double longPutPrice = calculateWeightedPrice(true, quantity, longPutHigher, depthMultiplier);
+    double shortPutPrice = calculateWeightedPrice(false, quantity, shortPutLower, depthMultiplier);
+    
+    // If any price is NaN, we don't have sufficient depth
+    if (std::isnan(longCallPrice) || std::isnan(shortCallPrice) || 
+        std::isnan(longPutPrice) || std::isnan(shortPutPrice)) {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+    
+    // Net premium calculation
+    return -longCallPrice + shortCallPrice - longPutPrice + shortPutPrice;
+}
+
+bool BoxSpreadModel::hasSufficientDepth(uint64_t quantity, double depthMultiplier) const {
+    // Check if all options have sufficient depth
+    double longCallPrice = calculateWeightedPrice(true, quantity, longCallLower, depthMultiplier);
+    if (std::isnan(longCallPrice)) return false;
+    
+    double shortCallPrice = calculateWeightedPrice(false, quantity, shortCallHigher, depthMultiplier);
+    if (std::isnan(shortCallPrice)) return false;
+    
+    double longPutPrice = calculateWeightedPrice(true, quantity, longPutHigher, depthMultiplier);
+    if (std::isnan(longPutPrice)) return false;
+    
+    double shortPutPrice = calculateWeightedPrice(false, quantity, shortPutLower, depthMultiplier);
+    if (std::isnan(shortPutPrice)) return false;
+    
+    return true;
+}
+
 }  // namespace BoxStrategy
