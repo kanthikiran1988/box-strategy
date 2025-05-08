@@ -12,7 +12,7 @@
         "include_weekly": true,
         "max_count": 3,
         "max_days": 30,
-        "min_days": 1
+        "min_days": 0
     },
     "fees": {
         "brokerage_percentage": 0.03,
@@ -24,7 +24,7 @@
         "stt_percentage": 0.05
     },
     "paper_trading": {
-        "base_slippage_percent": 0.1,
+        "base_slippage_percent": 0.0,
         "market_volatility_factor": 1.0
     },
     "risk": {

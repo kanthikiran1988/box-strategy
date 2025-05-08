@@ -180,6 +180,18 @@ public:
      */
     std::vector<BoxSpreadModel> sortByProfitability(
         const std::vector<BoxSpreadModel>& boxSpreads);
+        
+    /**
+     * @brief Export all valid spreads to a CSV file, regardless of profitability
+     * @param spreads Vector of box spread models
+     * @param expiry Expiry date used in the filename
+     * @param filename Optional filename (if empty, a default name will be generated)
+     * @return True if the export was successful, false otherwise
+     */
+    bool exportValidSpreadsToCsv(
+        const std::vector<BoxSpreadModel>& spreads,
+        const std::chrono::system_clock::time_point& expiry,
+        const std::string& filename = "") const;
 
 private:
     std::shared_ptr<ConfigManager> m_configManager;        ///< Configuration manager

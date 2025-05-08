@@ -24,8 +24,8 @@
     "expiry": {
         "include_monthly": true,
         "include_weekly": true,
-        "max_count": 7,
-        "max_days": 90,
+        "max_count": 3,
+        "max_days": 30,
         "min_days": 0,
         "process_in_parallel": true
     },
@@ -44,10 +44,10 @@
             "delay_between_expiries_ms": 0,
             "process_expiries_sequentially": false
         },
-        "strike_range_percent": 5.0
+        "strike_range_percent": 15.0
     },
     "paper_trading": {
-        "base_slippage_percent": 0.1,
+        "base_slippage_percent": 0.0,
         "market_volatility_factor": 1.0
     },
     "risk": {
@@ -60,13 +60,15 @@
         "capital": 75000.0,
         "exchange": "NFO",
         "max_strike_diff": 1000.0,
-        "min_profitability": 2,
-        "min_roi": 2,
+        "min_profitability": 0.1,
+        "min_roi": 0.3,
         "min_strike_diff": 100.0,
         "paper_trading": true,
         "quantity": 75,
         "scan_interval_seconds": 60,
-        "underlying": "NIFTY"
+        "underlying": "NIFTY",
+        "use_average_margin": true,
+        "depth_multiplier": 1.0
     },
     "system": {
         "log_level": "INFO",

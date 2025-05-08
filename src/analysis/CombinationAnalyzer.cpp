@@ -16,6 +16,7 @@
 #include <atomic>
 #include <queue>
 #include <functional>
+#include <fstream>
 
 namespace BoxStrategy {
 
@@ -495,6 +496,12 @@ std::vector<BoxSpreadModel> CombinationAnalyzer::findProfitableSpreadsForExpiry(
     m_logger->info("Completed analysis of {} combinations in {} seconds ({} combinations/sec)", 
                  totalCombinations, totalTime, 
                  totalCombinations / std::max(1.0, (double)totalTime));
+    
+    // Export all valid spreads to CSV before filtering
+    if (!validSpreads.empty()) {
+        exportValidSpreadsToCsv(validSpreads, expiry);
+        m_logger->info("Exported {} valid spreads to CSV for review", validSpreads.size());
+    }
     
     // Filter for profitable spreads
     auto profitableSpreads = filterProfitableSpreads(validSpreads);
@@ -976,6 +983,115 @@ std::string CombinationAnalyzer::generateOptionsCacheKey(
        << std::fixed << std::setprecision(2) << strike;
     
     return ss.str();
+}
+
+bool CombinationAnalyzer::exportValidSpreadsToCsv(
+    const std::vector<BoxSpreadModel>& spreads,
+    const std::chrono::system_clock::time_point& expiry,
+    const std::string& filename) const {
+    
+    if (spreads.empty()) {
+        m_logger->warn("No valid spreads to export to CSV");
+        return false;
+    }
+    
+    try {
+        // Generate a default filename if none provided
+        std::string actualFilename;
+        if (!filename.empty()) {
+            actualFilename = filename;
+        } else {
+            // Format expiry for filename
+            auto expiry_t = std::chrono::system_clock::to_time_t(expiry);
+            std::ostringstream ss;
+            ss << "valid_spreads_" << std::put_time(std::localtime(&expiry_t), "%Y%m%d");
+            ss << "_" << std::to_string(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now())) << ".csv";
+            actualFilename = ss.str();
+        }
+        
+        std::ofstream file(actualFilename);
+        if (!file.is_open()) {
+            m_logger->error("Failed to open CSV file for writing: {}", actualFilename);
+            return false;
+        }
+        
+        // Get config values
+        double depthMultiplier = m_configManager->getDoubleValue("strategy/depth_multiplier", 2.0);
+        uint64_t quantity = m_configManager->getIntValue("strategy/quantity", 1);
+        
+        // Write CSV header
+        file << "ID,Underlying,Exchange,LowerStrike,HigherStrike,Expiry,"
+             << "TheoreticalValue,DepthBasedNetPremium,LTPNetPremium,ProfitLoss,ROI,Profitability,"
+             << "Fees,Margin,"
+             << "LongCallLower,ShortCallHigher,LongPutHigher,ShortPutLower,"
+             << "SufficientDepth,"
+             << "CallLowerLTP,CallHigherLTP,PutHigherLTP,PutLowerLTP,"
+             << "CallLowerExecutablePrice,CallHigherExecutablePrice,PutHigherExecutablePrice,PutLowerExecutablePrice\n";
+        
+        // Write data rows
+        for (const auto& spread : spreads) {
+            // Format expiry
+            auto expiry_t = std::chrono::system_clock::to_time_t(spread.expiry);
+            std::stringstream expiry_ss;
+            expiry_ss << std::put_time(std::localtime(&expiry_t), "%Y-%m-%d");
+            
+            double theoreticalValue = spread.calculateTheoreticalValue();
+            double ltpNetPremium = spread.calculateNetPremium();
+            double depthNetPremium = spread.calculateNetPremiumWithDepth(quantity, depthMultiplier);
+            bool hasSufficientDepth = spread.hasSufficientDepth(quantity, depthMultiplier);
+            
+            // Calculate profit/loss correctly based on the sign of net premium
+            double profitLoss;
+            if (depthNetPremium < 0) {
+                profitLoss = theoreticalValue + depthNetPremium;
+            } else {
+                profitLoss = theoreticalValue - depthNetPremium;
+            }
+            
+            // Calculate executable prices from market depth
+            double callLowerExecutable = BoxSpreadModel::calculateWeightedPrice(true, quantity, spread.longCallLower, depthMultiplier);
+            double callHigherExecutable = BoxSpreadModel::calculateWeightedPrice(false, quantity, spread.shortCallHigher, depthMultiplier);
+            double putHigherExecutable = BoxSpreadModel::calculateWeightedPrice(true, quantity, spread.longPutHigher, depthMultiplier);
+            double putLowerExecutable = BoxSpreadModel::calculateWeightedPrice(false, quantity, spread.shortPutLower, depthMultiplier);
+            
+            // Write the row
+            file << spread.id << ","
+                 << spread.underlying << ","
+                 << spread.exchange << ","
+                 << spread.strikePrices[0] << ","
+                 << spread.strikePrices[1] << ","
+                 << expiry_ss.str() << ","
+                 << theoreticalValue << ","
+                 << (hasSufficientDepth ? std::to_string(depthNetPremium) : "INSUFFICIENT_DEPTH") << ","
+                 << ltpNetPremium << ","
+                 << profitLoss << ","
+                 << spread.roi << ","
+                 << spread.profitability << ","
+                 << spread.fees << ","
+                 << spread.margin << ","
+                 << spread.longCallLower.tradingSymbol << ","
+                 << spread.shortCallHigher.tradingSymbol << ","
+                 << spread.longPutHigher.tradingSymbol << ","
+                 << spread.shortPutLower.tradingSymbol << ","
+                 << (hasSufficientDepth ? "YES" : "NO") << ","
+                 << spread.longCallLower.lastPrice << ","
+                 << spread.shortCallHigher.lastPrice << ","
+                 << spread.longPutHigher.lastPrice << ","
+                 << spread.shortPutLower.lastPrice << ","
+                 << (std::isnan(callLowerExecutable) ? "INSUFFICIENT" : std::to_string(callLowerExecutable)) << ","
+                 << (std::isnan(callHigherExecutable) ? "INSUFFICIENT" : std::to_string(callHigherExecutable)) << ","
+                 << (std::isnan(putHigherExecutable) ? "INSUFFICIENT" : std::to_string(putHigherExecutable)) << ","
+                 << (std::isnan(putLowerExecutable) ? "INSUFFICIENT" : std::to_string(putLowerExecutable)) << "\n";
+        }
+        
+        file.close();
+        m_logger->info("Successfully exported {} valid spreads to {}", spreads.size(), actualFilename);
+        return true;
+        
+    } catch (const std::exception& e) {
+        m_logger->error("Error exporting valid spreads to CSV: {}", e.what());
+        return false;
+    }
 }
 
 }  // namespace BoxStrategy
